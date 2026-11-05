@@ -7,6 +7,8 @@
 - **시장 판정(보류)은 BM 조합으로 바뀌지 않는다.** 보류 사유는 "대상 기업이 월 80만 원 안팎을 낼지 근거가 없다"는 것인데, BM을 나눠도 고객의 총지출 의향은 여전히 확인되지 않았다. 오히려 인프라 임대·AI 종량을 별도 항목으로 보이면 고객이 보는 총액이 커지고, AI 종량은 "청구액을 예측할 수 없다"는 구매 장벽이 생긴다(2장).
 - **재무 판정은 "고객이 더 내는가"에 따라 바뀐다.** BM을 더하면 고객 1곳당 공헌이익이 월 51만 원에서 73\~84만 원으로 늘고, 사내 인력 포함 회수가 착수 후 7년 9개월에서 4년 4개월\~5년 1개월로 당겨진다[계산, 부록]. 그러나 이 개선은 모두 고객의 총지출이 월 80만 원에서 102\~150만 원으로 늘어난다는 가정에서 나온다. 고객의 총지출(구독 80만 + AI 직접 결제 약 40만 = 120만 원)이 그대로라면 AI를 포함해 팔아도 공헌이익은 AI 매입 할인율만큼만 늘어, 할인 10%면 월 약 4만 원(51만 → 54만), 회수 7년 9개월 → 7년 3개월이다[계산].
 - **API 종량 사용분 재판매는 실제로 있지만, 마진 조건은 계약이라 공개되지 않는다.** Anthropic·OpenAI·Google·Microsoft·AWS 다섯 곳 모두 파트너 등급은 있으나 등급별 API 할인율을 공개한 곳은 없다. 재판매는 주로 클라우드(Bedrock·Azure·Vertex)를 거치며, 간접 근거로 본 마진은 0\~8%(국내 MSP 업계 전언), 관리 서비스까지 맡으면 최대 15% 수준(Azure 파트너 크레딧 공식 예시)이다. 15%를 받아도 고객 1곳당 공헌이익은 월 약 6만 원 늘어난다(1.3·1.4).
+- **파트너 등급은 원가 절감 장치가 아니라 영업·재판매 자격 장치다.** 엘캠퍼스가 현실적으로 노릴 수 있는 것은 Anthropic Select(인증 10명 + 운영 고객 2곳 + 사례 1건)와 AWS Select(연회비 $2,500, 자격 4명, 구축 실적 3건)이며, 둘 다 실제 운영 고객이 있어야 해서 빨라야 착수 후 약 1년이다. Preferred의 "인증 100명"은 고객사가 아니라 파트너 회사 안의 인력이며, 실제 Preferred 사례는 약 900명 규모 컨설팅사다(1.5).
+- **인증 인력 확보는 Stage 1에서는 비용(연 약 175만 원 + 학습 시간)이고, 공급사 인증 교육은 큰 교육 BM이 되기 어렵다.** Anthropic 시험은 파트너 소속 직원만 볼 수 있고, AWS 등 공개 자격은 저가·무료 과정이 이미 많다. 엘캠퍼스의 훈련기관 자산이 맞는 곳은 정부가 비용을 대는 중소기업 근로자 "AI 기초·융합 훈련"이다(1.6).
 - **따라서 BM 개발로 사업성이 실제로 달라지는 조건은 두 가지다.** (1) 고객이 "AI 포함 총액"을 BYOK 총액보다 높게라도 사는지(편의·보안·서울 리전 처리 가치), (2) AI를 토큰 단가가 아니라 "좌석에 포함된 크레딧 + 충전" 형태로 팔아 원가가 드러나지 않는지. 둘 다 Stage 1 파일럿에서 확인해야 하고, 지금 근거로는 재무·종합 판정을 올릴 수 없다.
 
 ## 1. AI 공급 방식: 공식 문서로 확인한 사실
@@ -69,7 +71,82 @@
 
 AI 원가 40만 원(50인 기준 중간값)에 할인율을 곱한 만큼만 남으므로, 15%를 받아도 고객 1곳당 월 6만 원이다. 재판매 마진은 이 사업의 손익을 크게 바꾸지 못하고, 손익을 바꾸는 것은 여전히 고객이 내는 총액(ARPU)과 매달 신규 고객 수다[계산].
 
-### 1.5 파트너 등급의 의미와 시기 (Anthropic Select 기준)
+### 1.5 공급사별 파트너 등급 전체 (2026-11-05 확인)
+
+신뢰도 표시는 1.3과 같다. "공개 안 됨"은 공개 페이지에 없고 파트너 포털(로그인)에만 있을 수 있다는 뜻이다. 엘캠퍼스 도달 인원·기간과 공헌이익 효과는 모두 추정이다.
+
+#### Anthropic (Claude Partner Network, Services Track) ◎
+
+| 등급 | 요건 | 혜택 | 엘캠퍼스 도달(추정) | 공헌이익 효과 |
+|---|---|---|---|---|
+| Registered | 무료 가입, 인증 10명 확보 약속 | 파트너 포털, Partner Academy 무료 과정, 인증 시험 응시 자격 | 즉시 가능 | 없음 |
+| Select | 유효 인증 10명 이상 + 최근 12개월 운영 중인 공동 고객 2곳 + 공개 고객 사례 1건 | 파트너 디렉터리 등재, 첫 응시 할인, 교육·마케팅 자금. API 할인 조항 없음 | 인증 10명: 개발 4·UIX 2·PM 1에 영업·교육 3명 추가. 공동 고객 2곳은 출시 후 파일럿 고객이 실제로 쓰기 시작해야 하므로 착수 후 약 1년\~1년 6개월 | 직접 효과 0. 신뢰·리드 효과는 수치 근거 없음. 비용: 응시료 연 약 175만 원(10명 × $125 × 1,400원, 매년 갱신) + 학습 시간 |
+| Preferred | 인증 100명 + 공동 고객 15곳 + 공개 사례 3건 | Select와 같은 계열, "배포가 늘수록 커지는 보상"은 "곧 나온다"고만 적힘 | 인증 100명은 회사 규모를 넘어 Stage 1\~2 범위에서 비현실적 | 공식 근거 없음 |
+| Global Premier | 인증 1,000명 + 3개 이상 지역 공동 고객 100곳 + 사례 15건 + 공동 사업계획 | 공동 사업계획, 임원 후원 | 해당 없음 | 해당 없음 |
+
+승급은 1월 1일·7월 1일(2026년은 10월 1일 추가), 강등은 12월 31일 연간 심사에서만(90일 전 통보).
+
+**"인증 인원"은 파트너 회사 자신의 인력이다.** 공식 정의는 "회사 사람 가운데 유효한 Anthropic 인증을 갖고 최근 90일 안에 Claude를 쓴 사람의 수"이고, 인증은 개인에게 속한다 ◎. 시험은 파트너 소속 회사 도메인 메일로만 등록할 수 있어 고객사 직원은 자기 회사가 파트너가 아니면 응시할 수 없다 ◎. 계약직·협력사 인력이 인정되는지는 어느 문서에도 없다(확인 못 함). 따라서 Preferred의 "100명"은 고객사가 전사 도입한 규모가 아니라 **파트너 회사 안에 인증 인력 100명을 둔 규모**이고, 고객 쪽 규모는 "운영 중인 공동 고객 15곳"이 따로 요구한다.
+
+등급별 실제 사례(모두 2차 자료 △): Select = Casper Studios(약 40명, AI 서비스 부티크), Preferred = Caylent(약 900명, AWS 전문 컨설팅사), Global Premier = DXC(약 9만 명). 국내·일본 파트너의 등급은 찾지 못했다. Select는 수십 명 규모 회사도 도달하지만, Preferred는 수백 명 이상 IT 서비스 회사를 상정한 등급으로 보인다(추정).
+
+**인증 시험(Partner Academy, Pearson VUE 감독)** ◎: Claude Certified Associate–Foundations $99(등급 인원으로 인정 안 됨), Developer–Foundations $125, Architect–Foundations $125, Architect–Professional $175. 합격 720점/1,000점, **유효 12개월**. 인원 인정 조건은 "유효한 인증 + 최근 90일 안에 Claude 사용". **응시는 파트너 네트워크 소속 회사 직원만 가능**하고, 비파트너는 공개 Anthropic Academy 과정의 수료증만 받을 수 있다. 권장 학습 시간은 공식 문서에 없다. 전 세계 인증자 1만 명 이상(2026-06 기준).
+
+#### AWS (Services Partner) ◎
+
+| 등급 | 요건 | 혜택 | 엘캠퍼스 도달(추정) | 공헌이익 효과 |
+|---|---|---|---|---|
+| Registered | 무료 가입 | 파트너 센터, 온라인 교육·인정 과정 | 즉시 | 없음 |
+| Select | 연회비 $2,500. 인정(accreditation, 무료 온라인 과정) 4명(기술 2·비즈니스 2), 기초 자격 2명, 기술 자격 2명, 고객 구축 실적 3건(월 매출 합 $1,500 이상) | **재판매용 AWS 유통 프로그램 참여 자격**, 프로모션 크레딧, 개념검증·이전 자금(POA), 파트너 배지·검색 등재, 공동 영업(ACE) | 인정 4명은 무료 과정. 자격 4명 응시료 약 66만 원(기초 ₩131,525 × 2 + 어소시에이트 ₩197,287 × 2, 유효 3년). 구축 실적 3건은 출시 후 고객 3곳이 AWS 위에서 운영되면 충족 가능성(실적 인정 방식은 확인 필요). 착수 후 약 1년 | 재판매 마진(0\~8% 추정)을 받을 경로가 열림. 고객 1곳당 AWS 사용액(AI 40만 + 서버 10만 = 50만 원)에 5%면 월 2.5만 원. 연 비용 약 370만 원(연회비 350만 + 자격 갱신분)이면 약 13곳에서 본전(추정) |
+| Advanced | 인정 8명, 기초 자격 4명, 기술 자격 6명(그중 프로페셔널·스페셜티 3명), 실적 20건(월 매출 합 $10,000 이상), 파트너 사업계획 | MSP·Competency 프로그램, 공동 사례, 마케팅 개발 자금(MDF) | 기술 자격 6명 중 3명이 프로페셔널($300급)이라 클라우드 전문 인력 채용이 전제. Stage 2 이후 | 할인율 공개 안 됨 |
+| Premier | 인정 20명, 기초 10명, 기술 25명(프로·스페셜티 10명), 실적 50건(월 $50,000 이상), 검증 3개(MSP·DevOps·CloudOps 중 포함), 6개월 이상 유지, 경영진 사업 검토 | 최상위 마케팅·이벤트 혜택 | 해당 없음 | 공개 안 됨 |
+
+#### Microsoft (AI Cloud Partner Program, Solutions Partner) ◎/×
+
+- 등급 대신 6개 솔루션 영역(데이터·AI(Azure) 등)별 "Solutions Partner" 지정. 파트너 역량 점수 100점 중 **70점 이상**, 세 항목(성과: 12개월 신규 고객 수 / 역량: 중급·고급 자격 보유자 / 고객 성공: 사용량 증가·배포)이 모두 0점 초과여야 한다. 데이터·AI 영역은 대기업 트랙과 **SMB 트랙**이 따로 있다. 지정은 13개월마다 갱신 ◎.
+- 항목별 배점과 필요 자격 인원은 공개 페이지에서 "xx"로 비어 있어 확인 못 함 ×. 혜택(Azure 크레딧 등)도 확인 못 함 ×.
+- 재판매: CSP 간접 리셀러는 파트너 가입 + 유통사 계약, 직접 청구는 CSP 연 매출 100만 달러 이상 + Solutions Partner 지정 + 유료 지원 계약 ◎. 마진은 선마진 없이 파트너 크레딧(공식 예시 15%, 관리 서비스 조건) ◎.
+- 엘캠퍼스 도달: 간접 리셀러는 비교적 쉬움(추정), 직접 청구는 매출 기준상 Stage 1\~2에서 불가.
+
+#### Google Cloud (Partner Network) ◎/△
+
+- 등급: Select → Premier → Diamond. "자격·인증이 Select·Premier·Diamond 요건"이라고 명시, 인원 수·매출 기준은 공개 페이지에 없음 ◎.
+- 업계지(CRN) 보도로는 공동 판매 연간 계약액 기준이 $25만 / $200만 / $2,000만, Diamond는 인증 200개 수준 △(원문 확인 못 함).
+- 엘캠퍼스 도달: Select도 공동 판매 실적이 필요해 Stage 1에서는 어려움(추정).
+
+#### OpenAI (Partner Network, 2026-06-14) ◎
+
+- 등급: Select → Advanced → Elite. "영업 실적·기술 역량·공동 영업·배포 경험"의 높은 기준이라고만 하고 수치·인증 시험·응시료는 공개 안 됨.
+- 1억 5,000만 달러 투자, 2026년 말까지 인증 컨설턴트 30만 명 양성 목표, 향후 Codex·보안·에이전트 전문 분야. 재판매 권한·API 할인은 공개 안 됨. 국내 리셀러(삼성SDS·LG CNS)는 ChatGPT Enterprise를 대기업에 판매.
+
+#### 등급 판단 요약
+
+- 다섯 곳 모두 **등급이 올라간다고 API를 싸게 준다는 공개 근거는 없다.** 등급은 재판매 자격(AWS 유통 프로그램은 Select부터), 자금·크레딧, 디렉터리·공동 영업을 주는 장치다.
+- 엘캠퍼스가 현실적으로 노릴 수 있는 것은 **Anthropic Select와 AWS Select** 두 가지이고, 둘 다 실제 운영 고객이 있어야 해서 빨라야 착수 후 약 1년, 곧 Stage 1 파일럿 고객이 붙은 뒤다.
+- 직접 공헌이익에 연결되는 것은 AWS Select(재판매 경로)뿐이고, 그것도 마진 5% 가정에서 고객 약 13곳부터 본전이다. Anthropic Select의 가치는 원가가 아니라 영업 신뢰도와 교육 사업 연결(1.6)에서 찾아야 한다.
+
+### 1.6 인증 인력 확보는 비용인가, 교육 BM이 될 수 있나
+
+**결론: Stage 1에서는 비용이고, 공급사 인증 교육 자체는 큰 교육 BM이 되기 어렵다. 엘캠퍼스의 교육 자산이 맞물리는 곳은 공급사 인증이 아니라 정부 지원 "AI 기초·융합 훈련"이다.** 근거는 아래와 같다.
+
+| 항목 | 확인한 사실 | 수준 |
+|---|---|---|
+| Anthropic 인증의 시장 | 파트너 네트워크 소속 직원만 응시 가능, 응시료 $99\~175, 유효 12개월. 한국 블로그 후기로는 영어 시험. 전 세계 인증자 1만 명 이상. 미국 교육회사 Learning Tree가 2026-08-27 Claude 인증 4종 대비 강의를 출시. 국내에서 Anthropic·OpenAI 인증 대비 과정을 파는 교육회사는 찾지 못함 | ◎ / ○ / 블로그 |
+| 공인 교육 파트너 | Anthropic·OpenAI 모두 제3자 공인 교육기관 제도는 공개 문서에 없음. AWS·Google·Microsoft 공인 교육 파트너 요건 페이지는 열지 못함 | × |
+| AWS·Google·Microsoft 인증 교육 시장(국내) | 누구나 응시 가능. 인프런 AWS 어소시에이트 대비 강의 약 $84\~114(수강 3,789명), MS AI-900 대비 $34(100명). KPC 한국생산성본부 AI 자격 대비 2일 14시간 85만 원(시험료 포함). 정부 지원 무료 과정도 있음: 과기정통부 산하 RAPA × AWS 「클라우드 스쿨」 1,050시간 무료, 시험료 지원 | 업체 페이지·보도 |
+| 사업주훈련 환급과 공급사 인증 | AWS·Azure·Google 인증 전용 환급 이러닝 과정은 찾지 못함. K-디지털 트레이닝에서도 공급사 인증은 시험 바우처 같은 부가 요소로 쓰임 | 찾지 못함 |
+| 정부 지원 AI 훈련(중소기업 근로자) | 고용노동부 「AI 기초 및 융합훈련」: 기초 200개 과정·116개 기관, 융합 31개 과정·16개 기관, 우선지원 대상 기업은 기초 과정 무료, 융합은 최대 90% 지원(2026-05-06). 중소기업 AI훈련확산센터 10곳, AI특화 공동훈련센터 20곳(2026-03-30). 기초 훈련 지원 단가 예: 시간당 6,160원(업체 공지) | ◎ 고용노동부 / 업체 공지 |
+| 자격 보유자 임금 프리미엄 | 국내 자료 못 찾음. Skillsoft 2024(5,191명): 응답자의 93%가 자격 1개 이상, "새 자격 취득"이 임금 인상 이유 중 하나이나 격차 수치는 없음 | 업체 조사 |
+| 국내 IT 자격·AI 교육 시장 규모 | 이러닝 산업 전체 매출 5조 5,946억 원(2023, 이러닝산업 실태조사 재인용). IT 자격·AI 교육만의 시장 규모는 찾지 못함 | 재인용 |
+
+**판단 근거(추정 포함)**
+
+1. **비용으로서의 인증.** Anthropic Select에 필요한 10명은 응시료 연 약 175만 원과 학습 시간이면 되고, 교육 회사인 엘캠퍼스는 사내 인력을 빠르게 준비시킬 수 있다. 다만 Select 도달 속도를 정하는 것은 인증이 아니라 "운영 중인 공동 고객 2곳 + 공개 사례 1건"이다. 인증은 막히는 지점이 아니다.
+2. **교육 상품으로서의 공급사 인증.** Anthropic 인증은 응시 대상이 파트너 회사 직원으로 한정되고 영어 시험이라 국내 시장이 작다. AWS·Google·Microsoft 인증은 시장이 열려 있지만 인프런 같은 저가 강의와 정부 무료 과정이 이미 있고, 환급과정으로 만든 사례도 찾지 못했다. 엘캠퍼스의 주 고객인 30\~99인 중소기업이 직원에게 클라우드·AI 공급사 자격을 따게 할 수요는 근거가 없다.
+3. **맞물리는 지점.** 엘캠퍼스의 두 자산(사업주훈련 위탁기관·원격평생교육시설, 자격증 인강 시작)이 실제로 맞는 곳은 정부가 비용을 대는 중소기업 근로자 "AI 기초·융합 훈련"이다. 이 경우 교육 매출은 SaaS와 별개로 생기고, 플랫폼을 실습 도구로 쓰면 SaaS 체험 경로가 될 수 있다. 다만 교육 계약과 SaaS 혜택을 묶으면 국민 평생 직업능력 개발법 제21조 위험이 있으므로 계약·가격은 분리해야 한다(검토 문서 6.5). 이 훈련 시장의 경쟁 기관 수(116개 기관)와 엘캠퍼스의 훈련 과정 인정 여부는 사내 확인이 필요하다.
+4. **파트너 인증을 교육 신뢰 근거로 쓰는 것.** "Anthropic 공인 인증 인력이 가르치는 AI 교육"은 교육 상품의 차별점이 될 수 있지만, 이 효과를 보여 주는 자료는 없다(가설).
+
+### 1.7 파트너 등급의 의미와 시기 (Anthropic Select 기준)
 
 - 요건 중 "운영 중인 공동 고객 2곳 + 공개 사례 1건"은 고객이 있어야 채울 수 있으므로, 빨라야 Stage 1 파일럿 고객이 실제로 쓰기 시작한 뒤다(추정).
 - 인증 인원 10명은 개발 4명·UIX 2명(각 50% 투입)과 PM을 다 합쳐도 7명이므로, 영업·교육 인력까지 인증을 받아야 한다(추정). 시험 비용·학습 시간은 공식 문서에서 수치를 확인하지 못했다.
@@ -156,6 +233,7 @@ AI 원가 40만 원(50인 기준 중간값)에 할인율을 곱한 만큼만 남
 ## 5. 출처
 
 - 공급사 5곳 비교(1.3·1.4): OpenAI Partner Network https://openai.com/index/introducing-openai-partner-network/ (2026-06-14) · OpenAI Business Terms https://openai.com/policies/business-terms/ · OpenAI 가격 https://openai.com/api/pricing/ · 삼성SDS 바이라인네트워크 2025-12-23 https://byline.network/2025/12/23-532/ · LG CNS 한국경제 2026-02-18 https://www.hankyung.com/article/2026021895941 · Google Cloud 파트너 https://cloud.google.com/partners · Microsoft CSP 개요 https://learn.microsoft.com/en-us/partner-center/enroll/csp-overview (2026-05-18) · 직접 청구 요건 https://learn.microsoft.com/en-us/partner-center/enroll/direct-partner-new-requirements · 파트너 크레딧 https://learn.microsoft.com/en-us/partner-center/billing/partner-earned-credit-explanation (2025-03-27) · Azure OpenAI 가격 https://azure.microsoft.com/pricing/details/azure-openai/ · AWS Solution Provider https://aws.amazon.com/partners/programs/solution-provider/ · AWS 유통 https://aws.amazon.com/partners/programs/distribution-resellers/ · Bedrock 가격 https://aws.amazon.com/bedrock/pricing/ (2026-11-02) · AWS 채널 파트너 프라이빗 오퍼 https://docs.aws.amazon.com/marketplace/latest/userguide/channel-partner-offers.html
+- 파트너 등급·인증(1.5·1.6): Anthropic 파트너 인증 https://anthropic-partners.skilljar.com/page/partner-certifications · 응시 자격 https://anthropic-partners.skilljar.com/page/certification-eligibility · Claude Partner Network 2026-03-12 https://www.anthropic.com/news/claude-partner-network · AWS 등급 요건 https://aws.amazon.com/partners/services-tiers/ (2026-10-29) · AWS 응시료 https://aws.amazon.com/certification/policies/before-testing/ · Google 자격 https://cloud.google.com/learn/certification/generative-ai-leader · Google 파트너 https://partners.cloud.google.com/ · Microsoft 파트너 역량 점수 https://learn.microsoft.com/en-us/partner-center/membership/partner-capability-score (2026-10-19) · Channel Insider 2026-06-03(Caylent Preferred) https://www.channelinsider.com/channel-business/vendor-leadership-and-partner-programs/claude-partner-network-services-track/ · Aventis Advisors 2026-07-14(파트너 규모) https://aventis-advisors.com/the-claude-partner-network-explained/ · Learning Tree 2026-08-27 https://www.learningtree.com/press-releases/anthropic-claude-certification-courses/ · 고용노동부 AI 기초·융합훈련 2026-05-06 https://www.moel.go.kr/news/enews/report/enewsView.do?news_seq=19350 · 2026-03-30 https://www.moel.go.kr/news/enews/report/enewsView.do?news_seq=19141 · 인프런 AWS 강의 https://www.inflearn.com/course/aws-자격증-어소시에이트 · KPC https://www.kpc.or.kr/PTWED003_dtil_view.do?ecno=48270 · RAPA×AWS 클라우드 스쿨 https://www.smarttoday.co.kr/ko-kr/articles/56565 · Skillsoft 2024 https://skillsoft.com/blog/tech-salaries-climbed-5--thanks-to-skills-and-certifications
 - 재판매 간접 근거(1.4): Westcon-Comstor https://www.westconcomstor.com/uk/en/news/announcements/2026/bringing-anthropic-s-claude-to-the-channel-through-aws.html · TOKAI 2026-06-30 https://www.tokaiholdings.co.jp/english/news/assets/pdf/20260630release_e.pdf · Cloudvisor(Pulse 2026-05-27) https://www.pulse.bot/devops/news/cloudvisor-gains-anthropic-reseller-status-on-aws-bedrock-unlocking-claude-for-2000-startups-e32e6677-b6bf-47d9-925c-f224b1fde905/ · 바이라인네트워크 2024-04-19 https://byline.network/2024/04/240419_004/ · 메가존클라우드 2025 실적 https://byline.network/2026/04/7-412/ · cloudmagazin 2026-07-17 https://www.cloudmagazin.com/en/2026/07/17/cloud-marketplace-when-partners-lose-out-on-margins/ · Finout 2025-11-11(처리량 예약 비교, 업체 블로그) https://www.finout.io/blog/comparing-provisioned-ai-capacity-options-across-aws-azure-google-cloud-and-oci
 
 - Anthropic, Services Track partner hub, 2026-06-03 (2026-10-15 수정): https://www.anthropic.com/news/services-track-partner-hub
