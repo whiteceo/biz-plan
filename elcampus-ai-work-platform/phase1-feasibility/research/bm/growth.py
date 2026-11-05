@@ -15,8 +15,9 @@ CURVES = {
  '중간 사례(중앙값)':      lambda t: 0.0225 if t <= 60 else 0.015,                         # 생애 내내 월 2~2.5%
  '가속 없음':             lambda t: 0.0,                                                   # 기존 채널 floor만(선형)
 }
-def run(o, curve, floor=3, churn=0.02, cac=None, sales_cost=0, months=240, arpu=None):
-    """floor: 기존 채널(교육 고객) 월 유치(CAC 0). sales_cost: 기존 채널 1곳당 교육 영업 시간 비용(레드팀 I4)."""
+def run(o, curve, floor=3, churn=0.02, cac=None, sales_cost=0, months=240, arpu=None, free=3):
+    """floor: 매달 최소 유치(고정 유치 곳수). free: 그 가운데 CAC 0인 기존 채널 몫(기준 가정표: 3곳까지). sales_cost: 기존 채널 1곳당 영업 시간 비용(기준 가정표 민감도 75만)."""
+    free = min(free, floor)
     a = arpu or o['arpu']; c = o['cac'] if cac is None else cac; dm = DEV_MONTHS + o['add_dev']
     cum = -(CAPEX_BASE + o['add_once'] + (o['add_fixed'] + 2066 + 610) * o['add_dev']); low = cum
     n = 0.0; last_neg = 0; pay = None; hit = None; n_be = None; adds5 = []
@@ -26,7 +27,7 @@ def run(o, curve, floor=3, churn=0.02, cac=None, sales_cost=0, months=240, arpu=
         n = n * (1 - churn) + v
         s, F = stage_of(n); F += o['add_fixed']
         rev = n * a
-        op = rev - n * o['var'] - F - v * ONB - max(0, v - floor) * c - min(v, floor) * sales_cost
+        op = rev - n * o['var'] - F - v * ONB - max(0, v - free) * c - min(v, free) * sales_cost
         cum += op; low = min(low, cum)
         if op < 0: last_neg = t; n_be = None
         elif n_be is None: n_be = round(n)
@@ -50,7 +51,7 @@ if __name__ == '__main__':
     for k in keys:
         for cn in ('중간 사례(중앙값)', '가속 없음'):
             cv = CURVES[cn]
-            r1 = run(OPT[k], cv, churn=0.03); r2 = run(OPT[k], cv, floor=2); r3 = run(OPT[k], cv, sales_cost=100); r4 = run(OPT[k], cv, cac=1920)
+            r1 = run(OPT[k], cv, churn=0.03); r2 = run(OPT[k], cv, floor=2); r3 = run(OPT[k], cv, sales_cost=75); r4 = run(OPT[k], cv, cac=1920)
             print(f"{k} | {cn} | 해지3% {ym(r1['be'])} | 기존2곳 {ym(r2['be'])} | 영업비용 {ym(r3['be'])} | CAC1920 {ym(r4['be'])}")
     print('=== 해지 1%(SaaS Capital 2025 소액 계약 GRR 약 90%/년, 레드팀 인용) 참고')
     for k in keys:
@@ -74,3 +75,11 @@ if __name__ == '__main__':
     for k, (a, v) in BASEP.items():
         o = dict(OPT[k], arpu=a, var=v)
         print(k, a, ' · '.join(f"CAC{c} {ym(run(o, CURVES['성공 사례(상위 사분위)'], cac=c)['be'])}" for c in (0, 200, 450)))
+    print('=== 기준 가정표 시나리오(고정 유치): 낙관(상단 가격, 4곳 중 3곳만 CAC 0, 2%) / 기본 / 스트레스 / 참고 해지 1% / 영업 시간 비용 75')
+    TOP = {'E 현행 구상': 80, 'B 조직 AI 업무 플랫폼 + 안전 기본형(D+)': 107.5, 'C 현장·사무 통합 플랫폼(현장형)': 125, 'D 현장형 + 100~299인 확장': 174}
+    TOPV = {'E 현행 구상': 29, 'B 조직 AI 업무 플랫폼 + 안전 기본형(D+)': 37.5, 'C 현장·사무 통합 플랫폼(현장형)': 44, 'D 현장형 + 100~299인 확장': 55.5}
+    z = CURVES['가속 없음']
+    for k, (a, v) in BASEP.items():
+        o = dict(OPT[k], arpu=a, var=v); ot = dict(OPT[k], arpu=TOP[k], var=TOPV[k])
+        rl = run(ot, z, floor=4); rb = run(o, z); rs = run(o, z, churn=0.03); r1 = run(o, z, churn=0.01); rc = run(o, z, sales_cost=75)
+        print(f"{k} | 낙관 {ym(rl['be'])}/회수 {ym(rl['pay'])}/{rl['low']}억 | 기본 {ym(rb['be'])} | 스트레스 {ym(rs['be'])} | 해지1% {ym(r1['be'])} | 영업비용75 {ym(rc['be'])}")
