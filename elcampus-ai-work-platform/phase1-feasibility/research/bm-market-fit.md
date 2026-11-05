@@ -6,7 +6,7 @@
 
 - **시장 판정(보류)은 BM 조합으로 바뀌지 않는다.** 보류 사유는 "대상 기업이 월 80만 원 안팎을 낼지 근거가 없다"는 것인데, BM을 나눠도 고객의 총지출 의향은 여전히 확인되지 않았다. 오히려 인프라 임대·AI 종량을 별도 항목으로 보이면 고객이 보는 총액이 커지고, AI 종량은 "청구액을 예측할 수 없다"는 구매 장벽이 생긴다(2장).
 - **재무 판정은 "고객이 더 내는가"에 따라 바뀐다.** BM을 더하면 고객 1곳당 공헌이익이 월 51만 원에서 73\~84만 원으로 늘고, 사내 인력 포함 회수가 착수 후 7년 9개월에서 4년 4개월\~5년 1개월로 당겨진다[계산, 부록]. 그러나 이 개선은 모두 고객의 총지출이 월 80만 원에서 102\~150만 원으로 늘어난다는 가정에서 나온다. 고객의 총지출(구독 80만 + AI 직접 결제 약 40만 = 120만 원)이 그대로라면 AI를 포함해 팔아도 공헌이익은 AI 매입 할인율만큼만 늘어, 할인 10%면 월 약 4만 원(51만 → 54만), 회수 7년 9개월 → 7년 3개월이다[계산].
-- **"파트너 등급이 오르면 API를 더 싸게 받는다"는 공식 문서에서 확인되지 않았다.** Anthropic 파트너 등급(인증 인원 10명 등)은 실제로 있고 확인했지만, 등급 혜택은 교육·시험 할인·마케팅 지원이며 API 할인은 적혀 있지 않다. API 할인은 등급과 무관하게 영업 협상(약정 사용액 할인, 비율 비공개)으로만 나온다(1장).
+- **API 종량 사용분 재판매는 실제로 있지만, 마진 조건은 계약이라 공개되지 않는다.** Anthropic·OpenAI·Google·Microsoft·AWS 다섯 곳 모두 파트너 등급은 있으나 등급별 API 할인율을 공개한 곳은 없다. 재판매는 주로 클라우드(Bedrock·Azure·Vertex)를 거치며, 간접 근거로 본 마진은 0\~8%(국내 MSP 업계 전언), 관리 서비스까지 맡으면 최대 15% 수준(Azure 파트너 크레딧 공식 예시)이다. 15%를 받아도 고객 1곳당 공헌이익은 월 약 6만 원 늘어난다(1.3·1.4).
 - **따라서 BM 개발로 사업성이 실제로 달라지는 조건은 두 가지다.** (1) 고객이 "AI 포함 총액"을 BYOK 총액보다 높게라도 사는지(편의·보안·서울 리전 처리 가치), (2) AI를 토큰 단가가 아니라 "좌석에 포함된 크레딧 + 충전" 형태로 팔아 원가가 드러나지 않는지. 둘 다 Stage 1 파일럿에서 확인해야 하고, 지금 근거로는 재무·종합 판정을 올릴 수 없다.
 
 ## 1. AI 공급 방식: 공식 문서로 확인한 사실
@@ -31,7 +31,45 @@
 | Google Cloud Partner Network | Select / Premier / Diamond. 등급 요건은 공동 판매 실적 중심 | API 할인 조항 확인 못 함 | Google Cloud 파트너 안내 |
 | 구독형(ChatGPT·Claude 팀 요금제) 재판매 | 소비자·팀 구독을 묶어 되파는 것은 Anthropic 이용정책상 금지("services that route requests through consumer subscriptions"). ChatGPT Enterprise는 공인 리셀러만 | 해당 없음 | Anthropic 이용정책 |
 
-### 1.3 파트너 등급의 의미와 시기 (Anthropic Select 기준)
+### 1.3 AI 공급사 5곳 파트너십 비교 (2026-11-05 확인)
+
+신뢰도: ◎ 공식 문서 원문 · ○ 회사 보도자료·공식 블로그 · △ 언론·업계 전언 · × 확인 못 함
+
+| 항목 | Anthropic | OpenAI | Google (Gemini·Vertex) | Microsoft (Azure OpenAI·CSP) | AWS (Bedrock·APN) |
+|---|---|---|---|---|---|
+| 1) 가입 요건 | Select: 인증 10명 + 운영 고객 2곳 + 공개 사례 1건 ◎ | Partner Network(2026-06-14) Select·Advanced·Elite, "영업 실적·기술 역량·공동 영업·배포 경험"의 높은 기준, 수치 미공개 ◎ | Select·Premier·Diamond, "인증 기술 인력에 상당한 투자", 수치는 로그인 영역 ◎ | 간접 리셀러: 파트너 프로그램 가입 + 공인 유통사와 계약 ◎. 직접 청구: CSP 최근 12개월 거래 매출 100만 달러 이상 + Solutions Partner 지정 + 유료 지원 계약 ◎ | 가입 무료, 리셀러는 유통사 통해 시작 ◎. 등급 요건 수치는 로그인 영역(검토 문서 부록 C: Select 연회비 $2,500, 교육 4명·자격 4명·실적 3건) |
+| 2) 재판매 허용 | 상용 약관: 자기 제품 "구동"은 허용, "재판매"는 승인 필요 ◎. Bedrock 경유 공인 리셀러 존재 ○ | 약관: 계정·API 키 재판매·임대 금지, 자기 앱에 넣어 최종 사용자에게 제공은 허용 ◎. 국내 리셀러(삼성SDS·LG CNS)는 ChatGPT Enterprise 구독 ○ | Gemini API 약관 읽지 못함 ×. Google Cloud 리셀러가 클라우드 사용분을 청구하는 구조는 있음 ◎(세부 미확인) | CSP로 "Microsoft 클라우드 서비스 전체"를 판매 가능 ◎. Azure OpenAI를 특정해 허용·제한한 문구는 찾지 못함 × | 공인 리셀러가 Bedrock 재판매(2025-10-14부터), Claude는 "일정한 제한 아래" ○ |
+| 3) 할인·마진 공개 | 없음 ◎ | 없음 ◎ | 없음 ◎ | 선마진 없음, **파트너 크레딧(PEC)**: 고객 Azure 자원을 24시간 관리하는 파트너에게 사용액의 일정 비율 크레딧. 공식 문서의 계산 예시는 15%, 비율은 명시 안 됨 ◎. Azure OpenAI가 대상인지 미확인 × | "성장에 따라 할인을 받는다", 비율 미공개 ◎ |
+| 4) 약정 할인 | 영업 협상(약정 사용액·물량), 비율 비공개 ◎ | Enterprise "volume discounts", 비율 비공개 ◎ | 처리량 예약(주·월·분기·연 약정), 비율 미확인 △ | 처리량 예약(PTU) 월·연 예약 할인, 금액 읽지 못함 ◎/× | 배치 50%·Flex 50% 할인, 처리량 예약은 Anthropic 모델은 영업 문의 ◎ |
+| 5) 공동 영업·자금 | 교육·마케팅 자금, 시험 할인 ◎ | 1억 5,000만 달러 지원, 시장 개발 자금 ○/△ | 공동 영업, 마켓플레이스 판매 ◎ | — | 유통사 자금 지원 ◎ |
+| 6) 국내 SMB 리셀 사례 | 국내 공인 리셀러 못 찾음. 일본은 TOKAI COM(2026-06-30, AWS Premier 파트너) 등 다수 ○ | 삼성SDS(2025-12-23)·LG CNS(2026-02-18), 대기업 대상 ChatGPT Enterprise ○ | 못 찾음 × | 못 찾음 × | 메가존클라우드 등 MSP가 Bedrock 기반 구축 사례는 있으나 Claude 공인 리셀러 지위는 확인 못 함 △ |
+
+### 1.4 API 종량 사용분 재판매는 실제로 있는가, 마진은 얼마인가
+
+사용자 판단대로 **API 종량 사용분을 재판매하는 형태는 실제로 있다.** 다만 거의 모두 클라우드(AWS·Azure·Google)를 거치는 구조이고, 마진 조건은 계약으로 정해져 공개되지 않는다.
+
+| 근거 | 내용 | 신뢰도 |
+|---|---|---|
+| Westcon-Comstor(글로벌 유통사) 2026 공지 | Anthropic과 리셀러 계약을 맺어, 협력 파트너가 "AWS 재판매 프로그램을 통해" Bedrock의 Claude를 판매할 수 있다 | ○ 회사 공지, 상업 조건 없음 |
+| TOKAI COM(일본) 2026-06-30, Cloudvisor 2026-05-27 등 | Bedrock을 통해 Claude를 재판매. 구축·보안·운영 감시와 함께 판매 | ○ / △ |
+| AWS 마켓플레이스 채널 파트너 프라이빗 오퍼 | 공급사가 정한 도매가에 리셀러가 마진을 얹어 판매하는 구조가 공식으로 있다. 할인율은 공급사와 리셀러 계약으로 정함. Bedrock·Claude가 이 방식으로 팔리는지는 확인 못 함 | ◎ 구조만 |
+| Azure CSP 파트너 크레딧 | 고객 자원을 관리하는 파트너에게 사용액 대비 크레딧. 공식 예시 15% | ◎ 구조, 비율은 예시 |
+| 국내 MSP의 AWS 재판매 수수료 | "7\~8%를 넘지 못한다는 게 업계의 정설", "5% 이하도 있다"(바이라인네트워크 2024-04-19, 업계 익명 전언) | △ 2년 전 자료 |
+| 메가존클라우드 2025 실적 | 매출 1조 7,496억 원, 순이익 82억 원(약 0.5%), 조정 EBITDA 208억 원(약 1.2%) | ○ 보도자료. 회사 전체 수치라 재판매 마진으로 쓸 수는 없지만, 대형 MSP도 재판매만으로는 얇은 이익을 낸다는 정황 |
+| 마켓플레이스 수수료 | Microsoft 3%, AWS 프라이빗 오퍼 1.5\~3.5% | △ 업계지 |
+
+**정리:** 재판매 마진은 공식 수치가 없고, 간접 근거로 보면 0\~8% 범위(국내 MSP 전언), 관리 서비스까지 맡는 Azure 구조에서 최대 15% 수준(공식 예시)이다. 엘캠퍼스처럼 처음 시작하는 회사는 직접 리셀러가 아니라 MSP나 유통사 아래에 들어가는 경우가 많아, 그 마진을 나눠 갖게 된다(추정). 그래서 0%·5%·10%·15% 시나리오 중 **근거가 있는 쪽은 0\~5%, 10%는 가능성 있는 상단, 15%는 관리 서비스까지 하는 경우의 상한**으로 읽는 것이 맞다.
+
+| AI 매입 할인(마진) | 고객 1곳당 공헌이익(고객 총지출 120만 원 고정) | 회수, 사내 인력 포함 / 현금(착수 후) |
+|---|---|---|
+| 0% | 50만 원 | 8년 / 3년 3개월 |
+| 5% | 52만 원 | 7년 7개월 / 3년 2개월 |
+| 10% | 54만 원 | 7년 3개월 / 3년 1개월 |
+| 15% | 56만 원 | 6년 11개월 / 3년 |
+
+AI 원가 40만 원(50인 기준 중간값)에 할인율을 곱한 만큼만 남으므로, 15%를 받아도 고객 1곳당 월 6만 원이다. 재판매 마진은 이 사업의 손익을 크게 바꾸지 못하고, 손익을 바꾸는 것은 여전히 고객이 내는 총액(ARPU)과 매달 신규 고객 수다[계산].
+
+### 1.5 파트너 등급의 의미와 시기 (Anthropic Select 기준)
 
 - 요건 중 "운영 중인 공동 고객 2곳 + 공개 사례 1건"은 고객이 있어야 채울 수 있으므로, 빨라야 Stage 1 파일럿 고객이 실제로 쓰기 시작한 뒤다(추정).
 - 인증 인원 10명은 개발 4명·UIX 2명(각 50% 투입)과 PM을 다 합쳐도 7명이므로, 영업·교육 인력까지 인증을 받아야 한다(추정). 시험 비용·학습 시간은 공식 문서에서 수치를 확인하지 못했다.
@@ -117,6 +155,9 @@
 
 ## 5. 출처
 
+- 공급사 5곳 비교(1.3·1.4): OpenAI Partner Network https://openai.com/index/introducing-openai-partner-network/ (2026-06-14) · OpenAI Business Terms https://openai.com/policies/business-terms/ · OpenAI 가격 https://openai.com/api/pricing/ · 삼성SDS 바이라인네트워크 2025-12-23 https://byline.network/2025/12/23-532/ · LG CNS 한국경제 2026-02-18 https://www.hankyung.com/article/2026021895941 · Google Cloud 파트너 https://cloud.google.com/partners · Microsoft CSP 개요 https://learn.microsoft.com/en-us/partner-center/enroll/csp-overview (2026-05-18) · 직접 청구 요건 https://learn.microsoft.com/en-us/partner-center/enroll/direct-partner-new-requirements · 파트너 크레딧 https://learn.microsoft.com/en-us/partner-center/billing/partner-earned-credit-explanation (2025-03-27) · Azure OpenAI 가격 https://azure.microsoft.com/pricing/details/azure-openai/ · AWS Solution Provider https://aws.amazon.com/partners/programs/solution-provider/ · AWS 유통 https://aws.amazon.com/partners/programs/distribution-resellers/ · Bedrock 가격 https://aws.amazon.com/bedrock/pricing/ (2026-11-02) · AWS 채널 파트너 프라이빗 오퍼 https://docs.aws.amazon.com/marketplace/latest/userguide/channel-partner-offers.html
+- 재판매 간접 근거(1.4): Westcon-Comstor https://www.westconcomstor.com/uk/en/news/announcements/2026/bringing-anthropic-s-claude-to-the-channel-through-aws.html · TOKAI 2026-06-30 https://www.tokaiholdings.co.jp/english/news/assets/pdf/20260630release_e.pdf · Cloudvisor(Pulse 2026-05-27) https://www.pulse.bot/devops/news/cloudvisor-gains-anthropic-reseller-status-on-aws-bedrock-unlocking-claude-for-2000-startups-e32e6677-b6bf-47d9-925c-f224b1fde905/ · 바이라인네트워크 2024-04-19 https://byline.network/2024/04/240419_004/ · 메가존클라우드 2025 실적 https://byline.network/2026/04/7-412/ · cloudmagazin 2026-07-17 https://www.cloudmagazin.com/en/2026/07/17/cloud-marketplace-when-partners-lose-out-on-margins/ · Finout 2025-11-11(처리량 예약 비교, 업체 블로그) https://www.finout.io/blog/comparing-provisioned-ai-capacity-options-across-aws-azure-google-cloud-and-oci
+
 - Anthropic, Services Track partner hub, 2026-06-03 (2026-10-15 수정): https://www.anthropic.com/news/services-track-partner-hub
 - Anthropic, Claude Partner Network 출범, 2026-03-12: https://www.anthropic.com/news/claude-partner-network (본문 직접 열람은 Services Track 글로 대신함)
 - Claude 파트너 페이지: https://claude.com/partners (리셀러 유형 표기 없음)
@@ -150,4 +191,4 @@
 AI 원가 하단(14만)·상단(65만)으로 C를 다시 계산하면 공헌이익 76\~84만 원, 사내 인력 포함 회수 4년 5개월\~4년 11개월이다.
 
 ---
-점검(7원칙): 목적 ○ · 전제 △(AI 원가 40만·일회성 매출은 추정) · 근거 수준 △(재인용 4건, 파트너 가이드·포털 미열람) · 정합성 ○ · 청중 ○ · 실물 검증 △(두레이·잔디·ditoday·NIPA 원문 못 열음) · 독립 검증 △(바우처 상한 출처 충돌, 국내 MSP 임대 사례 없음)
+점검(7원칙): 목적 ○ · 전제 △(AI 원가 40만·일회성 매출은 추정) · 근거 수준 △(재판매 마진은 업계 전언·공식 예시뿐, 계약 조건 비공개) · 정합성 ○ · 청중 ○ · 실물 검증 △(Gemini 약관·Vertex 가격·NIPA 원문 못 열음) · 독립 검증 △(국내 MSP 마진 1개 출처, 2024년)
