@@ -17,6 +17,8 @@
 - **AI 사용분 재판매는 실제로 있지만 거의 모두 [클라우드] 경로이고, 마진은 계약이라 공개되지 않는다.** [AI 모델] 회사 가운데 파트너 등급별 API 할인을 공개한 곳은 없다(1.2). 간접 근거로 본 마진은 0\~8%(국내 MSP 업계 전언), 관리 서비스까지 맡으면 최대 15%(Azure 파트너 크레딧 공식 예시)다(1.3).
 - **엘캠퍼스가 현실적으로 노릴 등급은 [AI 모델] Anthropic Select와 [클라우드] AWS Select 두 가지다.** 둘 다 실제 운영 고객이 있어야 해서 빨라야 착수 후 약 1년이다. Anthropic Preferred의 "AI 파트너 인증 100명"은 고객사가 아니라 파트너 회사 안의 인력이며, 실제 Preferred 사례는 약 900명 규모 컨설팅사다(1.2).
 - **인증·자격증 교육을 엘캠퍼스가 시킬 수 있는가:** [AI 모델] AI 파트너 인증은 사내 직원 준비는 가능하지만, 외부에 대비 과정을 팔면 응시할 수 있는 사람이 파트너 회사 직원뿐이라 시장이 작다. [클라우드] 클라우드 자격증은 공식 공인 교육은 AWS가 신규 신청을 받지 않아 불가, 자체 제작한 비공인 대비 강의는 상표 규칙을 지키면 가능하다(1.4). 엘캠퍼스의 훈련기관 자산이 맞는 곳은 인증·자격증보다 정부가 비용을 대는 중소기업 근로자 "AI 기초·융합 훈련"이다(1.5).
+- **구매 앵커로는 "개인 AI → 조직 AI 전환"이 가장 근거가 많지만, 돈을 받을 고리는 좌석이 아니라 서비스다(4장).** 직원의 개인 AI 계정 사용과 회사의 통제 부재는 국내외 조사로 확인되고(국내 보안·IT 담당자 조사에서 개인 계정 사용 88.7%, 추적·통제 19.2%), 엘캠퍼스 자신도 같은 논리로 기업용 요금제를 샀다. 그러나 Anthropic·OpenAI는 소규모 파트너에게 좌석 재판매를 열어 두지 않았고(Anthropic 파트너 계약에 "재판매 권한 없음" 명시), 공식 수익 고리는 첫 주문 추천 수수료뿐이다. 약관에 맞는 형태는 "고객 명의 좌석 계약 + 엘캠퍼스 운영 대행 서비스료"이며, 제3자 위임 관리 허용 여부는 공급사 영업에 직접 문의해야 확인 가능하다.
+- **관리 수수료의 근거가 되는 통제 기능은 30\~100인 기업이 주로 살 Team·Business 요금제 위에서는 확보할 수 없다(4.4).** 관리·감사 API는 Claude Enterprise(최소 20석)와 ChatGPT Enterprise에만 있다. API 위에 자체 콘솔을 세우면 통제는 쥐지만 공식 앱 기능(프로젝트, 커스텀 GPT, 앱, 커넥터)을 잃고, 공식 앱은 월 2\~5건씩 기능을 내놓는다. "업무 플랫폼 + 좌석 재판매 + 운영 대행" 조합은 가운데 고리가 막혀 그대로는 성립하지 않으며, 업무 플랫폼이 이 앵커에 직접 더하는 가치도 아직 근거가 없다. 시장 판정(보류)은 바뀌지 않고, 파일럿 가설이 "전환·운영 대행에 1인당 얼마를 내는가"로 앞당겨진다.
 - **따라서 BM 개발로 사업성이 실제로 달라지는 조건은 두 가지다.** (1) 고객이 "AI 포함 총액"을 BYOK 총액보다 높게라도 사는지(편의·보안·서울 리전 처리 가치), (2) AI를 토큰 단가가 아니라 "좌석에 포함된 크레딧 + 충전" 형태로 팔아 원가가 드러나지 않는지. 둘 다 Stage 1 파일럿에서 확인해야 하고, 지금 근거로는 재무·종합 판정을 올릴 수 없다.
 
 ## 1. AI 공급과 파트너십: 두 축으로 나눈 사실
@@ -216,7 +218,124 @@ AI 원가 40만 원(50인 기준 중간값)에 할인율을 곱한 만큼만 남
 
 읽는 법: B\~D의 개선은 고객이 더 내는 만큼 생긴다. 고객 지출이 그대로인 E에서는 할인 20%(근거 없음)를 받아도 회수가 1년 2개월 당겨지는 데 그친다. 시장 판정을 보류로 둔 "지불 의향 미확인"이 B\~D에서 더 커지므로, BM 조합은 재무 판정을 올리는 근거가 아니라 **파일럿에서 검증할 가설의 목록**이다.
 
-## 4. 파일럿(Stage 1)에서 검증할 항목
+## 4. 구매 앵커와 AI 좌석 구독: 재판매·중간 관리 콘솔
+
+이 장은 "고객이 업무 플랫폼 + 인프라 + AI 구독 패키지를 사야 할 이유(구매 앵커)"가 무엇인지, 그 앵커를 Anthropic·OpenAI 좌석 구독제와 어떻게 묶을 수 있는지를 다룬다. 김영호 PO의 진단에서 출발한다. 업무 플랫폼은 번들이자 프레임워크라서 그것만으로는 꼭 써야 할 이유가 약하고, 그래서 인프라와 AI 구독을 붙인 패키지를 검토하게 됐다. 이 진단이 맞다면 패키지의 사업성은 앵커가 얼마나 강한지, 그리고 그 앵커에서 엘캠퍼스가 돈을 받을 고리가 있는지에 달려 있다.
+
+### 4.1 앵커 후보 비교
+
+각 후보를 세 기준으로 본다. 수요 근거(문제가 실제로 있는가), 지불 의향(30\~100인 기업이 돈을 내는가), 대체재(이미 더 싸게 해결하는 상품이 있는가). 판정은 앵커로서의 강도이며 상·중·하로 적는다.
+
+| 후보 | 수요 근거 | 지불 의향 | 대체재 | 앵커 강도 |
+|---|---|---|---|---|
+| "안전한 AI" ① 업무 데이터를 AI 학습에 쓰지 않음 | 보안 담당자 64.5%가 데이터 유출을 최대 우려로 꼽음(이스트시큐리티, 약 200명, 업체 조사 △) | 확인 못 함 | ChatGPT·Claude·Copilot·Gemini의 기업용 요금제는 모두 기본값이 "학습에 쓰지 않음" ◎ | **하.** 이미 업계 기본값이라 차별점이 되지 않는다 |
+| "안전한 AI" ② 데이터 국내 저장 | 30\~100인 제조·건설사에 원청·방산·공공 발주처가 국내 저장을 요구한다는 규정이나 점검표를 찾지 못함. 현대차·기아 × KISA 협력사 서버 점검 협약(2026-04-30)에도 AI 항목은 없음 △ | 확인 못 함 | 국내 저장은 ChatGPT Enterprise, Microsoft 365 Copilot, Bedrock·Vertex 경유 Claude만 가능. ChatGPT Business·Claude Team은 불가 ◎ | **하.** 요구하는 고객을 확인하지 못했다 |
+| "안전한 AI" ③ 회사가 사용을 통제하고 기록을 보는 기능 | 개인 계정 사용을 추적·통제하는 조직은 19.2%(파수, 151명 △) | 확인 못 함 | 감사 로그·Compliance API는 ChatGPT·Claude 모두 Enterprise 전용. 30\~100인 기업이 주로 살 Team·Business 요금제에는 없음 ◎ | **중.** 소규모 요금제에 빈틈이 있다. 다만 빈틈을 메우려면 4.3의 콘솔 문제를 풀어야 한다 |
+| "안전한 AI" ④ 법적 의무 | AI 기본법(2026-01-22 시행)의 의무는 AI 제품·서비스 제공자에게 있고, 내부에서 쓰기만 하는 회사에는 원칙적으로 없음(법률 보도 △). 개인정보위 안내서(2025-08, 2026-05)는 업무용 라이선스와 내부 AI 정책을 권고 ◎ | 확인 못 함 | 권고 수준이라 강제력이 없다 | **하\~중.** 영업 자료의 근거로는 쓸 수 있으나 구매를 강제하지 못한다 |
+| 예측 가능한 AI 비용 | 예상 못 한 AI 청구 경험 78%(Zylo, 재인용 △) | 상한형 선호는 해외 자료 | 플로우·MS·Google이 이미 좌석에 AI를 포함하고 크레딧 상한을 둠(2.1) | **중.** 필요 조건이지 구매 이유는 아니다 |
+| 업종 특화: 중대재해·안전보건 업무 | 5\~49인 사업장 80%가 중대재해법 준비 못 함(중기중앙회 2023, 892곳 △). 위험성평가 미실시 과태료는 50인 이상 2027년, 50인 미만 2028년부터 ○ | 상용 안전관리 SaaS가 월 5\~15만 원(무사퇴근 15만 원/50계정, 세이프로 1인 5,000원, KADRA 6만 원). 유료 컨설팅 이용 계획 13.7% △ | 고용노동부 컨설팅(2023년 3만여 곳), 무료 "안전함", KOSHA KRAS. 정부가 보조하는 공동안전관리자조차 목표의 60\~75%만 채움 △ | **하\~중.** 법적 필요는 확실하지만 유료 수요가 약하고 가격 상한이 낮다. 50\~100인 사업장의 2027년 과태료가 그나마 진입점이다 |
+| 경쟁 번들과의 차별 | — | — | Microsoft 365 Business Standard + Copilot 1인 월 31,800원, Premium + Copilot 43,200원 ◎. Google Workspace는 Gemini 포함. 플로우 1인 월 9,000\~22,000원(AI 크레딧 포함) ◎ | 앵커가 아니라 **비교 기준.** 어떤 앵커든 이 가격대와 비교된다 |
+| **개인 AI → 조직 AI 전환** | 한국 직장인 85%가 개인 AI를 업무에 가져옴(MS WTI 2024 ◎, 업체 조사). 중소기업 직원 80%(MS 2024). 파수 2026-10: 개인 계정 사용 88.7%, 금지한 조직에서도 77.3%, 추적·통제 19.2% △. MIT NANDA: 개인 사용 90% 이상, 공식 구독 약 40% △. Atlassian: 개인 생산성은 33% 올랐다고 답하지만 조직 전체 변화는 4% △. Zylo 2026: 경비 처리 1위 앱이 ChatGPT △ | 확인 못 함. 다만 같은 문제를 푸는 국내 대행업체가 실제로 영업 중(4.2) | 공급사 Team·Business 요금제를 고객이 직접 구매(1인 월 $20\~25, 최소 2석). 국내 원화 대행업체 | **중상.** 수요 근거가 가장 많고, 엘캠퍼스 자신이 실제 사례다. 지불 의향은 아직 없다 |
+
+"개인 AI → 조직 AI 전환"을 앵커로 보는 근거 가운데 가장 구체적인 것은 엘캠퍼스 자신의 경우다. 김영호 PO는 "개인 계정으로 쓰면 업무 데이터와 노하우가 개인에게 남고 회사가 관리할 수 없다"는 논리로 엘캠퍼스가 기업용 AI 요금제를 사도록 설득했다. 그런데 엘캠퍼스는 그 요금제를 공급사에서 직접 샀다. 이 사례는 두 가지를 동시에 보여 준다. 설득 논리는 실제로 경영진에게 통했고, 그 설득 과정에서 중간 업체가 돈을 받을 자리는 자동으로 생기지 않았다. 엘캠퍼스가 상품으로 만들 수 있는 것은 좌석 자체가 아니라 그 설득·도입·설정·정착 역할이다.
+
+대체재가 있다는 점도 분명하다. Claude Team과 ChatGPT Business는 2석부터 살 수 있고 SSO·사용 현황·학습 미사용을 이미 제공한다. 30\~100인 기업이 직접 사는 데 걸리는 것은 기능보다 절차다. 두 요금제 모두 해외 카드 결제이고, OpenAI·Anthropic은 한국 세금계산서를 발행하지 않는다(세무 업계 블로그 △). 그리고 설정과 사내 정착은 고객이 스스로 해야 한다.
+
+### 4.2 국내에서 이미 이 역할을 하는 업체
+
+| 업체 | 하는 일 | 가격 | 공식 지위 |
+|---|---|---|---|
+| 상상력집단 | ChatGPT·Claude·Gemini 등 100여 개 도구를 원화 세금계산서 한 장으로 구매 대행. 요금제 상담, 워크스페이스 설계, SSO·SCIM 설정, 관리자 교육, 1차 지원, 좌석 재배정, 사용 보고, 직무별 교육. 사용자 1만 8천 명 이상, 연 상담 400건 이상이라고 밝힘 | 공급사 정가 × 계약일 환율 + 부가세 10% + 대행 수수료(금액 비공개). 자사 블로그에 "Business 50석 연 약 1만 5천 달러, 직접 구매 시 약 1만 8천 달러" 예시가 있으나 연간·월간 결제 비교인지는 확인 못 함 | 공식 리셀러 여부 확인 못 함 |
+| 오피스오더(스피커블) | 견적서·세금계산서·거래명세서 발행, 좌석 일괄 지급, 팀별 크레딧 분할과 월별 명세. 설정·교육은 하지 않음 | Claude Team 1석 월 47,500원, Claude Pro 39,900원. 공식가 $25에 환율 1,400원을 가정하면 35,000원(부가세 포함 38,500원)이므로, 표시가가 부가세 포함이면 약 23%, 별도면 약 36% 높다(계산, 환율 가정) | 공식 리셀러 여부 확인 못 함 |
+| 삼성SDS, LG CNS | OpenAI 공식 ChatGPT Enterprise 리셀러(2025-12, 2026-02). 컨설팅·구축·보안·연동 | 비공개 | 공식. 대기업 대상이며 중소기업 상품은 없음 |
+| SK AX | OpenAI 서비스 파트너(재판매 아님) | 비공개 | 공식 |
+
+이 표가 주는 시장 신호는 두 가지다. 원화 결제와 세금계산서라는 편의만으로도 공급사 정가보다 20\~30%대 높은 값을 받는 업체가 있다는 것(가격표 기준, 판매량은 모름), 그리고 설정·교육·사용 보고까지 묶는 "전환 대행"이 이미 상품으로 팔린다는 것이다. 동시에 이들이 엘캠퍼스의 직접 경쟁자이고, 이들이 공급사 약관상 승인된 재판매자인지는 확인되지 않았다.
+
+### 4.3 좌석 구독 재판매 경로별 판정
+
+판정은 엘캠퍼스 같은 소규모 국내 회사가 30\~100인 고객에게 쓸 수 있는가를 기준으로 한다.
+
+| 경로 | 판정 | 근거 | 확인 방법 |
+|---|---|---|---|
+| Claude Team·Enterprise 좌석을 엘캠퍼스가 사서 고객에게 재판매 | **불가** | Claude Partner Network 계약(2026-06-03)은 "가입이 Anthropic 서비스를 재판매하거나 재라이선스할 권한을 주지 않는다"고 명시 ◎. 상업 약관 D.4(a)는 Anthropic의 명시적 승인 없는 재판매 금지 ◎. 공개된 리셀러 트랙 없음 | 개별 승인 가능성은 **공급사 영업에 직접 문의해야 확인 가능** |
+| Anthropic 추천(Referral) 수수료 | **가능, 다만 소액·일회성** | 추천 파트너 약관(2025-03-26): 수수료는 고객의 첫 주문에만 지급, 갱신·증설은 없음. 추천 파트너는 고객에게 서비스를 제공할 수 없음 ◎. 요율 비공개 | 요율은 **공급사 영업에 직접 문의해야 확인 가능** |
+| Claude Enterprise를 AWS Marketplace 채널 파트너 오퍼(CPPO)로 판매 | **조건부(미확인)** | Anthropic이 직접 등록한 상품(20석 12개월 $4,800, 1석 월 $20 상당), 프라이빗 오퍼 가능 ◎. 채널 파트너 오퍼 허용 여부와 한국 구매 가능 여부는 쓰여 있지 않음. 최소 20석이라 30\~100인 기업의 일부 직원만 쓰는 경우엔 맞지 않을 수 있음 | **공급사 영업에 직접 문의해야 확인 가능** |
+| Bedrock 경유 Claude 재판매(API 사용분) | **조건부 가능** | 일본 Classmethod(2026-03-02)가 "Amazon Bedrock용 Anthropic 공인 리셀러 프로그램"에 가입. 좌석이 아니라 API 사용분이며 AWS로 청구 ○. 이 경로는 4.4의 B안(자체 콘솔)과 묶인다 | [클라우드] 경로이므로 AWS 파트너 가입 후 확인 |
+| ChatGPT Business·Enterprise 좌석 재판매 | **불가(소규모 파트너 기준)** | 리셀러는 개별 계약으로만 지정(PwC 2024, 삼성SDS 2025-12, LG CNS 2026-02) ○. OpenAI Partner Network(2026-06-14) 공개 자료에 재판매 권한·수수료 조건이 없음 ◎. 업무 약관 1.3은 계정 접근의 재판매·임대 금지 ◎ | **공급사 영업에 직접 문의해야 확인 가능** |
+| 삼성SDS·LG CNS 아래 하위 판매(서브 리셀러) | **미확인** | 공개 자료 없음 | 해당 회사에 문의 |
+| 비공식 원화 대행(상상력집단·오피스오더 형태) | **권장하지 않음(법률 검토 필요)** | 시장에 실제로 있으나, 공급사 승인이 없다면 Anthropic 상업 약관 D.4(a)·OpenAI 업무 약관 1.3과 충돌할 수 있음. 공급사가 계정을 정지하면 고객 피해가 엘캠퍼스 책임으로 돌아올 수 있음(추정) | 전문가 검토 필요 |
+| **고객이 공급사와 직접 계약하고, 엘캠퍼스는 운영 대행 서비스료를 받음** | **가능(위임 관리 방식은 서면 확인 권장)** | 계약·결제 주체가 고객이면 재판매가 아니다. 상업 약관 D.5는 계정 안의 모든 활동을 고객 책임으로 둔다 ◎. 엘캠퍼스 직원이 고객 워크스페이스 안에서 각자 관리자 계정으로 일하는 형태가 약관에 가장 덜 걸린다. 다만 제3자 위임 관리를 양사 모두 명시적으로 허용하지도 금지하지도 않음 | 위임 관리 허용 여부는 **공급사 영업에 직접 문의해야 확인 가능** |
+| (참고) Microsoft 365 Copilot을 CSP 간접 리셀러로 판매 | **가능** | 총판 경유로 소규모 파트너도 가입 가능 ◎. 순수 재판매 순마진 약 12\~15%, 서비스를 묶으면 25\~40%(업체 블로그 △) | 국내 총판 조건 문의 |
+
+정리하면, 김영호 PO가 우려한 대로 Anthropic·OpenAI는 소규모 파트너에게 좌석 구독제 재판매를 열어 두지 않았다. 공식 문서로 확인되는 수익 고리는 Anthropic의 첫 주문 추천 수수료 하나이고, 그 외에는 고객 명의 계약 위에서 받는 운영 대행 서비스료뿐이다.
+
+### 4.4 중간 관리 콘솔: 관리 수수료의 근거가 되는 통제 기능을 확보할 수 있는가
+
+관리 수수료를 받으려면 엘캠퍼스가 고객 대신 "누가 쓰는지, 얼마나 쓰는지, 무엇을 넣었는지, 퇴사자 계정을 어떻게 회수하는지"를 다룰 수 있어야 한다. 두 가지 길이 있다. A안은 공급사 좌석 요금제 위에 공급사가 열어 준 관리 API로 콘솔을 붙이는 것이고, B안은 API 위에 엘캠퍼스의 AI 화면과 관리 콘솔을 직접 세우는 것이다.
+
+| 통제 기능 | A-1 Claude Team | A-2 Claude Enterprise(최소 20석) | A-3 ChatGPT Business | A-4 ChatGPT Enterprise | B 자체 콘솔(API·Bedrock) |
+|---|---|---|---|---|---|
+| 사용자 추가·삭제 자동화 | JIT 프로비저닝만(도메인 인증 필요). SCIM 없음 ◎ | SCIM, Admin API(구성원·초대) ◎ | SAML SSO. SCIM 제공 범위 확인 못 함 | 확인 못 함 | 직접 구현 |
+| 사용 현황 | 관리자 화면 대시보드 + 지출 CSV. API 없음 ◎ | Enterprise Analytics API(소유자만 키 발급, 2026-01-01부터 데이터) ◎ | 관리자 화면 | 사용 분석 API 여부 확인 못 함 | 직접 구현(게이트웨이 로그) |
+| 감사 로그·대화 내용 조회 | 화면 CSV 내보내기(기간 제한, 내용 없음) ◎ | Compliance API: 활동 기록, 구성원·역할, 대화·파일·프로젝트 내용 조회와 삭제 ◎ | 없음(Compliance API는 Enterprise 전용) ◎ | Compliance API ◎ | 직접 구현 |
+| 사용자별 지출 한도 | 확인 못 함 | Admin API 지출 한도 ◎ | 확인 못 함 | 확인 못 함 | 게이트웨이로 가능(LiteLLM 공개판에 사용자·팀 예산 포함 ◎) |
+| 여러 고객사를 한 화면에서 관리 | 없음 | 없음. Compliance API의 다중 조직은 한 Enterprise 계약 안의 연결 조직뿐 ◎ | 없음 | 없음 | 가능(설계 나름) |
+| 공식 앱 기능(프로젝트, 커스텀 GPT, 데스크톱·모바일 앱, 커넥터) | 그대로 | 그대로 | 그대로 | 그대로 | **대부분 잃음.** 커스텀 GPT는 ChatGPT 안에서만 동작 ◎. Claude.ai 프로젝트·앱은 API에 대응 기능 없음(추론). API의 MCP 커넥터는 Bedrock 미지원 ◎ |
+| **관리 수수료 근거 확보 판정** | **불가.** 콘솔에 연결할 API가 없어 사람이 고객 관리자 화면에서 대행하는 수준 | **조건부 가능.** 고객이 키를 발급해 넘겨야 하고, 고객사마다 따로 연결 | **불가** | **조건부 가능.** 가격·최소 좌석 비공개 | **가능.** 대신 사용자 경험을 엘캠퍼스가 책임지고 공급사 앱의 출시 속도를 따라가야 함 |
+
+B안을 오픈소스로 세울 때 주의할 점이 있다. Open WebUI는 v0.6.6(2025-04-19)부터 상표 표시를 지우거나 바꾸는 것을 금지했고, 엘캠퍼스 로고를 함께 붙이는 것도 30일 사용자 50명 이하이거나 기업 라이선스(가격 비공개)를 산 경우에만 허용한다 ◎. 화이트 라벨 콘솔에는 맞지 않는다. LiteLLM은 공개판에 사용자·팀·예산·사용량 제한이 있고 SSO·SCIM·감사 로그·조직 관리자는 기업판(견적)이다 ◎. TypingMind Team은 월 $99\~299(5석 포함, 추가 1석 $8)이고 자체 도메인·로고를 모든 요금제에서 쓸 수 있다 ◎. Portkey 기업판은 견적이다 ◎.
+
+B안이 따라가야 할 속도도 확인했다. Claude 앱 공식 릴리스 노트에는 2025-11부터 2026-10까지 약 60건, 월 평균 약 5건(월 2\~8건)이 올라왔고, 그중 약 22건(월 약 2건)이 Team·Enterprise 요금제나 관리 기능에 관한 것이다(예: 조직용 스킬 2025-12-18, Enterprise 분석 API 2026-02-13, Enterprise 역할 기반 권한 2026-04-09, 커넥터 접근 관리 2026-05-28) ◎. ChatGPT Business 릴리스 노트에서 프로젝트·커넥터·메모리·에이전트·관리 기능만 세면 2025-11부터 2026-06까지 약 22건, 월 약 3건이다(예: 앱·Apps SDK 2025-11-13, 워크스페이스 분석 2026-04-16, 워크스페이스 에이전트 2026-04-22) ◎. 건수는 시장조사팀이 날짜별 항목을 센 근사치다. 자체 콘솔이 기능으로 공식 앱을 따라잡기는 어렵고, 경쟁한다면 관리·청구·다중 고객 관리 쪽이어야 한다.
+
+결론적으로 "중간 관리 콘솔"을 좌석 요금제 위에 올리는 A안은 Claude Enterprise(20석 이상)나 ChatGPT Enterprise를 산 고객에게만 성립한다. 30\~100인 기업이 주로 고를 Team·Business 요금제에는 콘솔이 붙을 API가 없다. 통제 기능을 확실히 쥐는 길은 B안뿐인데, B안은 고객이 공식 앱 대신 엘캠퍼스 화면을 쓰게 만드는 일이라 "공식 앱보다 덜 편한 AI"를 파는 위험이 생긴다.
+
+### 4.5 좌석 마진과 인당 관리 수수료가 고리를 강화하는가
+
+좌석 마진은 고리가 되지 못한다. Anthropic·OpenAI 좌석의 공식 재판매 경로가 소규모 파트너에게 없으므로 기대할 수 있는 마진은 0이고, 추천 수수료는 첫 주문 한 번뿐이다(4.3).
+
+인당 관리 수수료는 고리가 될 수 있지만, 그 근거는 좌석이 아니라 서비스다. 시장에서 확인한 신호는 원화 대행업체가 결제 편의만으로 정가보다 20\~30%대 높은 값을 받는다는 것(오피스오더, 계산·환율 가정)과, 설정·교육·사용 보고를 묶은 대행 상품이 있다는 것(상상력집단, 수수료 비공개)뿐이다. Claude Team 1석 월 약 3.5만 원(환율 1,400원 가정)의 20\~30%는 1인 월 약 7,000\~10,000원이고, 50석이면 월 35\~50만 원이다. 이 값은 지불 의향 조사가 아니라 대행업체 가격표에서 거꾸로 짐작한 것이므로 BM 계산에서는 시나리오 값으로만 써야 한다(추정).
+
+"우리 플랫폼 + 공급사 좌석 재판매 + 운영 대행" 조합은 지금 근거로는 그대로 성립하지 않는다. 가운데의 좌석 재판매가 막혀 있기 때문이다. 성립 가능한 형태는 "고객 명의로 공급사 좌석 계약 + 엘캠퍼스의 전환·운영 대행 서비스료 + 업무 플랫폼"이며, 이때 남는 질문은 업무 플랫폼이 이 조합에서 무엇을 더하느냐다. 공급사 앱이 이미 프로젝트·커넥터·조직 공유 기능으로 "회사 자료와 연결된 AI"를 제공하므로, 업무 플랫폼이 앵커에 직접 기여하는 근거는 아직 없다. 앵커("개인 AI → 조직 AI 전환")는 BM 개발 스레드의 대안 가운데 서비스형(공급사 좌석 + 도입·정착·교육·원화 결제 대행)과 가장 잘 맞고, 업무 플랫폼은 그 위에 얹는 선택 상품으로 볼 때 무리가 적다.
+
+이 결론은 시장 판정을 바꾸지 않는다(보류 유지). 바뀌는 것은 파일럿에서 검증할 가설이다. "고객이 업무 플랫폼에 월 80만 원을 내는가"보다 먼저 "고객이 AI 전환·운영 대행에 1인당 얼마를 내는가"를 확인해야 한다(5장).
+
+### 4.6 "안전한 AI"를 대신할 앵커 문장 후보
+
+| 후보 | 받쳐 주는 근거 | 확인해야 할 것 |
+|---|---|---|
+| "직원 개인 계정에 흩어진 AI를 회사 계정으로 옮기고, 누가 무엇에 쓰는지 회사가 보게 해 드립니다." | 개인 계정 사용 88.7%, 추적·통제 19.2%(파수 △) | Team 요금제에서 회사가 볼 수 있는 범위가 대시보드 수준이라는 점(4.4). 과장 금지 |
+| "직원이 그만둬도 AI에 쌓인 업무 자료는 회사에 남습니다." | 엘캠퍼스 설득 논리. 기업용 요금제는 회사 소유 워크스페이스 | 구성원 삭제 시 대화·프로젝트 처리 방식은 요금제별 공식 문서 확인 필요 |
+| "AI 구독을 원화 세금계산서 한 장으로, 설정과 직원 교육까지 맡겨 주세요." | 세금계산서 미발행(세무 블로그 △), 국내 대행업체 존재 | 대행 방식의 약관 적합성(4.3) |
+| "개인의 AI 활용을 팀의 성과로 바꿉니다." | 개인 생산성 33% 대 조직 변화 4%(Atlassian △) | 효과를 보여 줄 파일럿 측정 지표 |
+
+### 4.7 공급사 영업에 물어볼 질문
+
+Anthropic
+
+1. 한국의 소규모 파트너가 30\~100인 기업에 Claude Team·Enterprise 좌석을 재판매하도록 승인받을 수 있는가. 조건과 마진 구조는 무엇인가.
+2. AWS Marketplace의 Claude Enterprise 상품에 채널 파트너 오퍼(CPPO)를 허용하는가. 한국 법인이 살 수 있고 최소 좌석은 20석인가.
+3. 고객 명의 Team·Enterprise 조직에 파트너 직원이 관리자로 들어가 운영을 대행하는 것을 허용하는가. 서면으로 확인해 줄 수 있는가.
+4. Team 요금제에 Admin·Analytics·Compliance API를 열 계획이 있는가.
+5. 파트너가 여러 고객 조직을 한 곳에서 관리하는 기능(위임 관리, 다중 조직 콘솔)이 있거나 계획되어 있는가.
+6. 추천 수수료율과 지급 조건은 무엇인가. 갱신·증설에도 지급하는가.
+7. 한국 고객에게 세금계산서를 발행할 수 있는 경로(국내 법인·공인 리셀러)가 있는가.
+8. Bedrock 경유 재판매의 "제한"은 무엇이고, 서울 리전에서 Claude를 재판매할 수 있는가.
+
+OpenAI
+
+1. Partner Network Select 등급에 ChatGPT Business 좌석 재판매 권한이 있는가.
+2. 삼성SDS·LG CNS 아래에서 중소기업 대상 하위 판매를 할 수 있는가.
+3. ChatGPT Business에서 SCIM, 사용 분석 API, Compliance API는 어디까지 제공되는가.
+4. 고객 워크스페이스에 대한 파트너의 위임 관리를 허용하는가.
+5. 추천 수수료 제도가 있는가.
+6. ChatGPT Enterprise의 최소 좌석과 한국 가격은 얼마인가.
+
+삼성SDS·LG CNS
+
+1. 중소기업 대상 하위 판매 파트너를 모집하는가. 마진과 지원 조건은 무엇인가.
+
+## 5. 파일럿(Stage 1)에서 검증할 항목
 
 1. 가격 제시 방식 비교: 같은 기업에 (가) BYOK, (나) AI 크레딧 포함 정액, (다) 크레딧 포함 + 충전, (라) 토큰 종량 네 안을 보여 주고 선택·지불 의향 총액을 받는다(LOI 조건에 포함).
 2. 전용 서버(데이터 분리)에 대한 추가 지불 의향: 공용 대비 얼마를 더 내는지.
@@ -224,8 +343,11 @@ AI 원가 40만 원(50인 기준 중간값)에 할인율을 곱한 만큼만 남
 4. AI 교육 별도 구매율(교육 계약과 분리한 상태에서).
 5. 클라우드·AI 바우처 사용 의향과 공급기업 등록 요건(NIPA 확인).
 6. Anthropic·AWS 영업 담당에게: 약정 사용액 할인 조건, Bedrock 재판매 "제한" 내용, 국내 공인 리셀러 가능 여부, 플랫폼 기능 제공이 "구동"에 해당하는지(법률 검토 병행).
+7. AI 전환·운영 대행의 지불 의향: 개인 AI 계정을 쓰는 직원 비율, 회사가 이미 내는 AI 비용(개인 구독 보전·법인카드), "고객 명의 좌석 + 대행 서비스료"에 1인당 월 얼마를 내는지. 업무 플랫폼을 함께 살 때와 따로 살 때를 나눠 묻는다.
+8. 고객이 고르는 요금제: Team·Business(관리 API 없음)와 Enterprise(20석 이상, 관리 API 있음) 가운데 무엇을 사는지. 관리 콘솔 A안이 성립하는 고객 비율이 여기서 정해진다.
+9. Anthropic·OpenAI·삼성SDS·LG CNS 영업 문의 결과(4.7 질문 목록).
 
-## 5. 출처
+## 6. 출처
 
 - [AI 모델]·[클라우드] 파트너십(1.1~1.3): OpenAI Partner Network https://openai.com/index/introducing-openai-partner-network/ (2026-06-14) · OpenAI Business Terms https://openai.com/policies/business-terms/ · OpenAI 가격 https://openai.com/api/pricing/ · 삼성SDS 바이라인네트워크 2025-12-23 https://byline.network/2025/12/23-532/ · LG CNS 한국경제 2026-02-18 https://www.hankyung.com/article/2026021895941 · Google Cloud 파트너 https://cloud.google.com/partners · Microsoft CSP 개요 https://learn.microsoft.com/en-us/partner-center/enroll/csp-overview (2026-05-18) · 직접 청구 요건 https://learn.microsoft.com/en-us/partner-center/enroll/direct-partner-new-requirements · 파트너 크레딧 https://learn.microsoft.com/en-us/partner-center/billing/partner-earned-credit-explanation (2025-03-27) · Azure OpenAI 가격 https://azure.microsoft.com/pricing/details/azure-openai/ · AWS Solution Provider https://aws.amazon.com/partners/programs/solution-provider/ · AWS 유통 https://aws.amazon.com/partners/programs/distribution-resellers/ · Bedrock 가격 https://aws.amazon.com/bedrock/pricing/ (2026-11-02) · AWS 채널 파트너 프라이빗 오퍼 https://docs.aws.amazon.com/marketplace/latest/userguide/channel-partner-offers.html
 - 파트너 등급·AI 파트너 인증·클라우드 자격증(1.2~1.5): Anthropic 파트너 인증 https://anthropic-partners.skilljar.com/page/partner-certifications · 응시 자격 https://anthropic-partners.skilljar.com/page/certification-eligibility · Claude Partner Network 2026-03-12 https://www.anthropic.com/news/claude-partner-network · AWS 등급 요건 https://aws.amazon.com/partners/services-tiers/ (2026-10-29) · AWS 응시료 https://aws.amazon.com/certification/policies/before-testing/ · Google 자격 https://cloud.google.com/learn/certification/generative-ai-leader · Google 파트너 https://partners.cloud.google.com/ · Microsoft 파트너 역량 점수 https://learn.microsoft.com/en-us/partner-center/membership/partner-capability-score (2026-10-19) · Channel Insider 2026-06-03(Caylent Preferred) https://www.channelinsider.com/channel-business/vendor-leadership-and-partner-programs/claude-partner-network-services-track/ · Aventis Advisors 2026-07-14(파트너 규모) https://aventis-advisors.com/the-claude-partner-network-explained/ · Learning Tree 2026-08-27 https://www.learningtree.com/press-releases/anthropic-claude-certification-courses/ · 고용노동부 AI 기초·융합훈련 2026-05-06 https://www.moel.go.kr/news/enews/report/enewsView.do?news_seq=19350 · 2026-03-30 https://www.moel.go.kr/news/enews/report/enewsView.do?news_seq=19141 · 인프런 AWS 강의 https://www.inflearn.com/course/aws-자격증-어소시에이트 · KPC https://www.kpc.or.kr/PTWED003_dtil_view.do?ecno=48270 · RAPA×AWS 클라우드 스쿨 https://www.smarttoday.co.kr/ko-kr/articles/56565 · Skillsoft 2024 https://skillsoft.com/blog/tech-salaries-climbed-5--thanks-to-skills-and-certifications
@@ -249,6 +371,11 @@ AI 원가 40만 원(50인 기준 중간값)에 할인율을 곱한 만큼만 남
 - SaaS 전환지원센터 2026 SaaS 전환 컨설팅 1차 공고(2026-03-10): https://grant-documents.thevc.kr/293304_2026%EB%85%84+SaaS+%EC%A0%84%ED%99%98%EC%A7%80%EC%9B%90%EC%84%BC%ED%84%B0+SaaS+%EC%A0%84%ED%99%98+%EC%BB%A8%EC%84%A4%ED%8C%85+%EC%88%98%EC%9A%94%EA%B8%B0%EC%97%85+%EB%AA%A8%EC%A7%91+%EA%B3%B5%EA%B3%A0.pdf
 - 벤처스퀘어 2026-04-13 (AI 통합 바우처, 메가존클라우드): https://www.venturesquare.net/1075477/ · 2026-03-13 (큐빅): https://www.venturesquare.net/1049395/
 
+- 구매 앵커·좌석 재판매·관리 콘솔(4장, 모두 2026-11-05 열람): Claude Partner Network 계약 https://www.anthropic.com/legal/cpna · 추천 파트너 약관 https://www.anthropic.com/legal/referral-partner-program-terms · Anthropic 상업 약관 https://www.anthropic.com/legal/commercial-terms · Anthropic 소비자 약관 https://anthropic.com/legal/terms · OpenAI 업무 약관 https://openai.com/policies/business-terms · OpenAI 파트너 https://openai.com/business/partners · AWS Marketplace Claude Enterprise https://aws.amazon.com/marketplace/pp/prodview-nnvi6wff6ef6m · AWS 블로그 2025-10-15 https://aws.amazon.com/blogs/awsmarketplace/claude-for-enterprise-premium-seats-with-claude-code-now-available-in-aws-marketplace · Classmethod 2026-03-02 https://classmethod.jp/english/news/260302-anthropic/ · 삼성SDS 2025-12-24 https://www.samsungsds.com/en/news/openai-251224.html · LG CNS https://www.digitaltoday.co.kr/en/view/4005/lg-cns-begins-openai-reseller-push-to-expand-chatgpt-enterprise-in-south-korea · SK AX https://www.asiae.co.kr/en/article/2026051509113037000 · Microsoft 간접 리셀러 https://learn.microsoft.com/en-us/partner-center/indirect-reseller-tasks-in-partner-center · CSP 마진(업체 블로그) https://redresscompliance.com/microsoft-csp-partner-margins.html
+- 관리 기능: Claude Admin API https://platform.claude.com/docs/en/manage-claude/admin-api · Analytics API https://platform.claude.com/docs/en/manage-claude/analytics-api · Compliance API https://platform.claude.com/docs/en/manage-claude/compliance-api · Team 분석 https://support.claude.com/en/articles/12883420 · SCIM·JIT https://support.claude.com/en/articles/13133195 · OpenAI Admin API https://developers.openai.com/api/docs/guides/admin-apis.md · OpenAI Compliance API https://intercom.help/openai/en/articles/9261474 · 커스텀 GPT https://help.openai.com/en/articles/8554402 · MCP 커넥터 https://platform.claude.com/docs/en/agents-and-tools/mcp-connector · Claude Code on Bedrock https://code.claude.com/docs/en/amazon-bedrock · Open WebUI 라이선스 https://docs.openwebui.com/license/ · LiteLLM https://www.litellm.ai/pricing · Portkey https://portkey.ai/docs/enterprise/pricing · TypingMind https://docs.typingmind.com/typingmind-team/getting-started/compare-typingmind-team-plans · Claude 릴리스 노트 https://support.claude.com/en/articles/12138966-release-notes · ChatGPT Business 릴리스 노트 https://help-lb.openai.com/en/articles/11391654-chatgpt-business-release-notes
+- 앵커 수요·대체재: MS WTI 2024 https://news.microsoft.com/ko-kr/2024/05/14/wtilaunch2024 · MS SMB 2024-06-05 https://microsoft.com/en-us/microsoft-365/blog/2024/06/05/workers-worldwide-are-embracing-ai-especially-in-small-and-medium-size-businesses · 파수 2026-10-28 https://byline.network/2026/10/28-676/ · MIT NANDA(Fortune 2025-08-19) https://www.fortune.com/2025/08/19/shadow-ai-economy-mit-study-genai-divide-llm-chatbots · Zylo 2026 https://zylo.com/news/2026-saas-management-index · Atlassian https://www.unleash.ai/artificial-intelligence/just-4-of-organizations-are-seeing-true-roi-from-ai-finds-atlassian/ · 이스트시큐리티 https://byline.network/2025/02/5-261/ · 세금계산서(세무 블로그) https://taxfirm.co.kr/blog/ai-subscription-vat-business-number · OpenAI 데이터 국내 저장 https://openai.com/index/expanding-data-residency-access-to-business-customers-worldwide · Claude 학습 미사용 https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training · Claude 지역 규정 https://claude.com/regional-compliance · M365 Copilot 데이터 https://learn.microsoft.com/en-us/copilot/microsoft-365/enterprise-data-protection · Gemini 데이터 지역 https://workspaceupdates.googleblog.com/2026/06/gemini-app-data-regions-support.html · 현대차·기아 × KISA https://view.asiae.co.kr/article/2026043015183884832 · AI 기본법 https://www.newsis.com/view/NISX20260122_0003486463 · https://www.lawtimes.co.kr/news/articleView.html?idxno=217123 · 개인정보위 안내서 https://byline.network/2025/08/6-277/ · Microsoft 365 가격 https://www.microsoft.com/ko-kr/microsoft-365/business/compare-all-microsoft-365-business-products · 상상력집단 http://imaginationgroup.co.kr/en/ai-procurement · https://edu.imaginationgroup.co.kr/chatgpt-subscription-proxy-cost-guide/ · 오피스오더 https://officeorder.co.kr/biz
+- 안전보건 업종: 중기중앙회 2023-08 https://mobile.newsis.com/view/NISX20230829_0002429523 · 과태료 시행령 2026-07-21 https://biz.sbs.co.kr/amp/article/20000323632 · 고용노동부 컨설팅 https://newsseoul.co.kr/news/view/1065599421636451 · 공동안전관리자 https://www.segye.com/newsView/20250917516432 · 안전함 https://www.ceoscoredaily.com/page/view/2025012420124529856 · 무사퇴근 https://www.musaday.co.kr/pricing/ · 세이프로 https://www.safe-pro.kr/Price · KADRA https://kadrasafety.com/pricing · 안전달인 https://www.sgmaster.co.kr/infoans/main/payment
+
 ## 부록. 계산 근거
 
 손익 모델 /mnt/project-files/reviews/round5/model_v6.py를 그대로 쓰고 입력값만 바꿨다(매달 신규 3곳, 해지 2%/월, 단위 만 원).
@@ -265,4 +392,4 @@ AI 원가 40만 원(50인 기준 중간값)에 할인율을 곱한 만큼만 남
 AI 원가 하단(14만)·상단(65만)으로 C를 다시 계산하면 공헌이익 76\~84만 원, 사내 인력 포함 회수 4년 5개월\~4년 11개월이다.
 
 ---
-점검(7원칙): 목적 ○ · 전제 △(AI 원가 40만·도달 기간·본전 고객 수는 추정) · 근거 수준 △(재판매 마진은 업계 전언·공식 예시뿐, 훈련 규정은 비공식 사본) · 정합성 ○ · 청중 ○(용어 [AI 모델]·[클라우드] 고정) · 실물 검증 △(Google·Microsoft 등급·교육 파트너 요건은 로그인 영역) · 독립 검증 △(국내 MSP 마진 1개 출처)
+점검(7원칙): 목적 ○(앵커와 수익 고리를 사업 판정에 연결) · 전제 △(AI 원가 40만·도달 기간·본전 고객 수·환율 1,400원·관리 수수료 시나리오는 추정) · 근거 수준 △(재판매 금지·관리 API 범위는 공식 문서, 개인 AI 사용 실태는 업체 조사, 국내 대행 마진은 가격표 역산) · 정합성 ○ · 청중 ○(용어 [AI 모델]·[클라우드] 고정) · 실물 검증 △(ChatGPT Enterprise·SCIM 문서 일부 열람 실패, 위임 관리는 공급사 문의 필요) · 독립 검증 △(국내 MSP 마진 1개 출처, 대행업체 공식 지위 미확인)
