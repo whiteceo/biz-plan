@@ -18,7 +18,7 @@ def stage_of(n):
     for s, (cap, F) in STAGE.items():
         if n <= cap: return s, F
 
-OPT = {
+OPT = {  # 주의: 여기 arpu는 상품안의 낙관(상단) 가격이다. 기본(중간) 가격은 scen.py의 SC를 쓴다(레드팀 R1).
  # name: arpu, var(고객당 월 변동비), add_fixed(조직 위에 더하는 월 고정비), add_dev(개발 개월 추가), add_once(일회 투자 추가), cac(기존 채널 밖 신규 1곳), base_free(기존 채널 월 유치, CAC 없이 온보딩만)
  'E 현행 구상': dict(arpu=80, var=29, add_fixed=0, add_dev=0, add_once=0, cac=850),
  'B 조직 AI 업무 플랫폼 + 안전 기본형(D+)': dict(arpu=107.5, var=37.5, add_fixed=1.5*DEV+300, add_dev=5, add_once=1500, cac=850),

@@ -1,11 +1,11 @@
 # 상품안 × 시나리오(낙관·기본·스트레스·보수). 결론 기준 = 사내 인력 포함 지속 월 흑자(white 2026-11-05 결정). 회수·희망 수준은 참고.
 # 정의: 착수 후 = 개발 기간 포함, 시장 검증 3개월 제외(검토 문서 5장·model_v6와 같음).
-#       확보 비용: 매달 4곳까지는 기존 교육 고객 채널(검토 문서 5.2의 상단)로 보고 온보딩 비용만, 4곳을 넘는 몫은 1곳당 CAC.
+#       확보 비용: 기준 가정표(research/baseline-assumptions.md)대로 매달 3곳까지 기존 채널(온보딩 비용만), 3곳을 넘는 몫은 1곳당 CAC.
 #       조직: 고객 200곳까지 Stage 1, 1,000곳까지 Stage 2(BM 11.2). 모든 상품 입력값은 [가정], 비교 기준은 product-offer.md 5장.
 import math
 from target import EXT, OPT, STAGE, CAPEX_BASE, DEV_MONTHS, ONB, TARGET_REV, TARGET_MARGIN, stage_of, ym
 
-def run(o, N, arpu, var, churn, months=180, free=4, onb=ONB):
+def run(o, N, arpu, var, churn, months=180, free=3, onb=ONB):
     dm = DEV_MONTHS + o['add_dev']
     cum = -(CAPEX_BASE + o['add_once'] + (o['add_fixed'] + EXT) * o['add_dev']); low = cum
     n = 0; last_neg = 0; pay = None; hit = None
@@ -36,6 +36,10 @@ if __name__ == '__main__':
         for sn, (a, v, N, ch) in d.items():
             r = run(OPT[k], N, a, v, ch)
             print(f"{k} | {sn} | {a} | {N} | {ch:.0%} | {ym(r['be'])} | {r['n']} | {r['op']:,} ({r['mg']:.0%}) | {r['low']}억 | {ym(r['pay'])} | {ym(r['hit'])}")
+    print('\n참고: 해지 1% (기본 가격, 매달 3곳)')
+    for k, d in SC.items():
+        a, v, N, ch = d['기본']; r = run(OPT[k], N, a, v, .01)
+        print(f"  {k}: 지속 월 흑자 {ym(r['be'])}, 15년 뒤 {r['n']}곳, 월 영업이익 {r['op']:,}, 최대 적자 {r['low']}억")
     print('\n민감도: 기존 채널 고객에도 1곳당 영업 시간 비용 75만 원(교육 영업 담당 3일 × 일 25만 원, 자리표시자)을 더하면')
     for k in SC:
         a, v, N, ch = SC[k]['기본']; r = run(OPT[k], N, a, v, ch, onb=ONB + 75)
