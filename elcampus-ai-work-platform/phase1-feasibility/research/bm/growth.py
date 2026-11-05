@@ -62,3 +62,15 @@ if __name__ == '__main__':
             for c in (0, 200, 450, 850):
                 r = run(OPT[k], CURVES[cn], cac=c); out.append(f"CAC{c}: 흑자 {ym(r['be'])}/회수 {ym(r['pay'])}/적자 {r['low']}억")
             print(k, '|', cn, '|', ' · '.join(out))
+    print('=== 기본 가격(상품기획팀 6.3: B 94.5/변동 36.1, C 101/41.4, D 123.4/47) × 곡선, 해지 2% / 3%')
+    BASEP = {'E 현행 구상': (80, 29), 'B 조직 AI 업무 플랫폼 + 안전 기본형(D+)': (94.5, 36.1),
+             'C 현장·사무 통합 플랫폼(현장형)': (101, 41.4), 'D 현장형 + 100~299인 확장': (123.4, 47)}
+    for k, (a, v) in BASEP.items():
+        o = dict(OPT[k], arpu=a, var=v)
+        for cn, cv in CURVES.items():
+            r = run(o, cv); r3 = run(o, cv, churn=0.03); r2 = run(o, cv, floor=2)
+            print(f"{k} {a} | {cn} | 흑자 {ym(r['be'])}({r['n_be']}곳) 회수 {ym(r['pay'])} 적자 {r['low']}억 | 해지3% 흑자 {ym(r3['be'])} | 기존2곳 흑자 {ym(r2['be'])}")
+    print('=== 기본 가격, 성공 곡선, 가속분 CAC 0/200/450')
+    for k, (a, v) in BASEP.items():
+        o = dict(OPT[k], arpu=a, var=v)
+        print(k, a, ' · '.join(f"CAC{c} {ym(run(o, CURVES['성공 사례(상위 사분위)'], cac=c)['be'])}" for c in (0, 200, 450)))
