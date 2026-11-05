@@ -83,3 +83,20 @@ if __name__ == '__main__':
         o = dict(OPT[k], arpu=a, var=v); ot = dict(OPT[k], arpu=TOP[k], var=TOPV[k])
         rl = run(ot, z, floor=4); rb = run(o, z); rs = run(o, z, churn=0.03); r1 = run(o, z, churn=0.01); rc = run(o, z, sales_cost=75)
         print(f"{k} | 낙관 {ym(rl['be'])}/회수 {ym(rl['pay'])}/{rl['low']}억 | 기본 {ym(rb['be'])} | 스트레스 {ym(rs['be'])} | 해지1% {ym(r1['be'])} | 영업비용75 {ym(rc['be'])}")
+    print('=== 메인비즈 채널 시나리오(시장조사팀 sales-channels-mainbiz.md): 신규 월 3곳에서 분기마다 q% 증가, 3년 뒤 그 수준 유지. 3곳 초과분 CAC c, 채널 담당 1명 월 600 추가. 기본 가격, 해지 2%')
+    def run_q(o, q, c, staff=600, years=3, ch=0.02, months=240):
+        dm = 9 + o['add_dev']
+        cum = -(27965 + o['add_once'] + (o['add_fixed'] + 2066 + 610) * o['add_dev']); low = cum; n = 0; last_neg = 0; pay = None
+        from target import stage_of
+        for t in range(1, months + 1):
+            v = 3 * (1 + q) ** (min(t - 1, years * 12 - 1) // 3)
+            n = n * (1 - ch) + v; s_, F = stage_of(n); F += o['add_fixed'] + staff
+            op = n * (o['arpu'] - o['var']) - F - v * 65 - max(0, v - 3) * c
+            cum += op; low = min(low, cum)
+            if op < 0: last_neg = t
+            if pay is None and cum >= 0: pay = t
+        return ym(last_neg + 1 + dm if last_neg < months else None), ym(pay + dm if pay else None), round(-low / 1e4, 1), round(n)
+    for k, (a, v) in BASEP.items():
+        o = dict(OPT[k], arpu=a, var=v)
+        for q in (0.10, 0.20):
+            print(k, a, f'분기 +{q:.0%}', ' · '.join(f"CAC{c}: {run_q(o, q, c)}" for c in (200, 450, 850)))
