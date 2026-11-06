@@ -12,7 +12,7 @@ def plan(case, step):
 MIXES = {False: (.5, .45, .05), True: (.55, .45, 0)}
 NAME = {False: '세 그레이드 동시(T3)', True: '단계 출시안(T2)'}
 # 통합 보완 묶음: 19장 BM 조정안(사업 책임자 360 + G&A 200 + 보험·사무 100) 가운데 G&A는 기술운영팀의 수납 80·세무 30·법무 25(=135)와 겹쳐 잔여 65만 남김.
-INT = dict(addF=360 + 65 + 100, sales=150, onb_add=60, ch1=.035)
+INT = dict(addF=360 + 65 + 100, sales=150, onb_add=35, ch1=.035)
 def r(o, a, v, g3, pk=None, **kw):
     pk = pk or {}
     return sim(o, a, v, onb=65 + g3 + pk.get('onb_add', 0), addF=pk.get('addF', 0), sales=pk.get('sales', 0), ch1=pk.get('ch1'), **kw)

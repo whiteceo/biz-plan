@@ -33,7 +33,7 @@ CASES = {'현행 구상(E) + 운영 1.0명, 80만': (E1, 80, 29, 0),
 RT = dict(addF=960, sales=150, onb_add=60, ch1=.035)           # 레드팀 묶음
 # BM 조정안: CS·고객 성공 0.5명(250)은 변동비 안 '고객 지원 인건비 12만 원/곳'(검토 문서 3장, 지원 담당 신규 채용)과 중복 → 뺀다.
 #   보험·사무 150 → 100(개인정보 배상책임보험은 사업 매출 규모상 연 수백만 원 수준으로 봄, 학습 지식·신뢰 2). 나머지는 유지.
-BM = dict(addF=360 + 200 + 100, sales=150, onb_add=60, ch1=.035)
+BM = dict(addF=360 + 200 + 100, sales=150, onb_add=35, ch1=.035)  # 기준 가정표 5장: 도입 +35(+60은 범위)
 def run_pk(o, a, v, g3, pk, **kw):
     return sim(o, a, v, onb=65 + g3 + pk.get('onb_add', 0), addF=pk.get('addF', 0), sales=pk.get('sales', 0), ch1=pk.get('ch1'), **kw)
 if __name__ == '__main__':
@@ -45,7 +45,7 @@ if __name__ == '__main__':
     print('--- 항목별 단독 영향(가치가 그레이드, 기준 대비)')
     o, a, v, g3 = CASES['그레이드 구조, 가치가']
     for lab, pk in [('사업 책임자 0.3명 360', dict(addF=360)), ('G&A 0.25명 200', dict(addF=200)), ('CS 0.5명 250', dict(addF=250)), ('보험·사무 100', dict(addF=100)),
-                    ('영업비 150/곳', dict(sales=150)), ('도입 +60', dict(onb_add=60)), ('첫해 해지 3.5%', dict(ch1=.035))]:
+                    ('영업비 150/곳', dict(sales=150)), ('도입 +35', dict(onb_add=35)), ('첫해 해지 3.5%', dict(ch1=.035))]:
         print(' ', lab, run_pk(o, a, v, g3, pk))
     print('--- BM 조정안에서 지속 흑자가 착수 후 7년 / 5년이 되는 월 매출/곳(가격·임금 고정, 가치가 믹스 비율 유지)')
     for k, (o, a, v, g3) in CASES.items():
