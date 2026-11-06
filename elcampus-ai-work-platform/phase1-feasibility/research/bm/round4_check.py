@@ -40,3 +40,9 @@ o, v, ob = CASES[2][1], CASES[2][2], CASES[2][3]
 base = go(OPT['E 현행 구상'], 80, 29, 3, .02)['be']
 for a10 in range(800, 2000, 5):
     if go(o, a10 / 10, v, 3, .02, ob)['be'] <= base: print('   ', a10 / 10); break
+print('=== 연 계약 조건(상품기획팀 12.9: 연 계약 60%, 할인 15%, 해지 2% → 1.5%). 결제 수수료는 할인 뒤 매출 기준 2.5%')
+for pk in PRICE:
+    for mk, mix, o in (('기본', MIX['기본'], G), ('단계 출시', (.55, .45, 0), G_STEP)):
+        a, v, g3 = mixed(PRICE[pk], mix); f = 1 - .6 * .15; a2 = round(a * f, 1); v2 = round(v - a * (1 - f) * 0.025, 1)
+        r0 = go(o, a, v, 3, .02, 65 + g3); r1 = go(o, a2, v2, 3, .02, 65 + g3); r2 = go(o, a2, v2, 3, .015, 65 + g3); r3 = go(o, a2, v2, 3, .025, 65 + g3)
+        print(f"  {pk} {mk}: 월 정가 {a} → {a2} | 연 계약 없음 {ym(r0['be'])}({r0['low']}억) | 할인만(해지 2%) {ym(r1['be'])}({r1['low']}억) | 할인 + 해지 1.5% {ym(r2['be'])}({r2['low']}억) | 할인 + 해지 2.5% {ym(r3['be'])}")
