@@ -15,9 +15,9 @@ CURVES = {
  '중간 사례(중앙값)':      lambda t: 0.0225 if t <= 60 else 0.015,                         # 생애 내내 월 2~2.5%
  '가속 없음':             lambda t: 0.0,                                                   # 기존 채널 floor만(선형)
 }
-def run(o, curve, floor=3, churn=0.02, cac=None, sales_cost=0, months=240, arpu=None, free=3):
+def run(o, curve, floor=3, churn=0.02, cac=None, sales_cost=0, months=240, arpu=None, free=3, onb=None):
     """floor: 매달 최소 유치(고정 유치 곳수). free: 그 가운데 CAC 0인 기존 채널 몫(기준 가정표: 3곳까지). sales_cost: 기존 채널 1곳당 영업 시간 비용(기준 가정표 민감도 75만)."""
-    free = min(free, floor)
+    free = min(free, floor); ob = ONB if onb is None else onb
     a = arpu or o['arpu']; c = o['cac'] if cac is None else cac; dm = DEV_MONTHS + o['add_dev']
     cum = -(CAPEX_BASE + o['add_once'] + (o['add_fixed'] + 2066 + 610) * o['add_dev']); low = cum
     n = 0.0; last_neg = 0; pay = None; hit = None; n_be = None; adds5 = []
@@ -27,7 +27,7 @@ def run(o, curve, floor=3, churn=0.02, cac=None, sales_cost=0, months=240, arpu=
         n = n * (1 - churn) + v
         s, F = stage_of(n); F += o['add_fixed']
         rev = n * a
-        op = rev - n * o['var'] - F - v * ONB - max(0, v - free) * c - min(v, free) * sales_cost
+        op = rev - n * o['var'] - F - v * ob - max(0, v - free) * c - min(v, free) * sales_cost
         cum += op; low = min(low, cum)
         if op < 0: last_neg = t; n_be = None
         elif n_be is None: n_be = round(n)
