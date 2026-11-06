@@ -16,15 +16,11 @@ def sim(p, N=3, ch1=.035, ch=.02, months=180, build_fixed=False, onb=None, sales
     return (neg + 1 + p['dev'] if neg < months else None), round(-low / 1e4, 1), round(sum(ages))
 f = lambda r: f"{G.ym(r[0])} / {r[1]}억 / {r[2]}곳"
 if __name__ == '__main__':
-    for p in (G.M1, G.M2, G.M3, G.M3b, G.M3c):
+    for p in (G.M1, G.M2):  # 리셀·도입 대행안(M3)은 white님 지시(리셀 구조 제외, 2026-11-06)로 뺐다
         print(p['name'], '| 재현', f(sim(p)), '| 스트레스', f(sim(p, ch=.03)), '| 보수', f(sim(p, N=2, ch=.03)))
-    print('M3 매달 6곳', f(sim(G.M3, N=6)), '| 10곳', f(sim(G.M3, N=10)), '| 6곳+해지 3%', f(sim(G.M3, N=6, ch=.03)))
     print('M1 매달 10곳', f(sim(G.M1, N=10)), '| 석 4.4만', f(sim(G.plan('x', 15, 4.4, 1.0, 4, (2,.5,.5,0), (2,.5,.5,.5)))))
     print('--- v3 정합 보정')
     for p in (G.M1, G.M2):
         print(p['name'], '구축 기간 고정비 포함', f(sim(p, build_fixed=True)), '| + 도입 100', f(sim(p, build_fixed=True, onb=100)))
-    # M3 대손: 고객에게 공급가 전체(66 + 대행 15 = 81만)를 청구하면 대손은 총청구액의 1%
-    M3g = dict(G.M3, v=8 + 3 + (15 * 4.4 + 15) * G.BAD)
-    print('M3 대손을 총청구 81만 기준', f(sim(M3g)), '| 매달 6곳', f(sim(M3g, N=6)), '| + 도입 100', f(sim(M3g, N=6, onb=100)))
     print('M1 석 4.4만 + 구축 고정 + 도입 100', f(sim(G.plan('x', 15, 4.4, 1.0, 4, (2,.5,.5,0), (2,.5,.5,.5)), build_fixed=True, onb=100)))
     print('M1 매달 10곳 + 구축 고정 + 도입 100', f(sim(G.M1, N=10, build_fixed=True, onb=100)))
